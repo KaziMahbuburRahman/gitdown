@@ -7,19 +7,30 @@ const App = () => {
   const handleDownload = async () => {
     try {
       // Fetch file URLs from GitHub API
-      const response = await fetch(${folderUrl}?recursive=1);
+      const response = await fetch(`${folderUrl}?recursive=1`);
       const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch folder content: ${data.message}`);
+      }
+
       const files = data.tree.filter(item => item.type === 'blob');
 
       // Create a zip file using JSZip
       const zip = new JSZip();
 
       // Add each file to the zip file
-      for (const file of files) {
-        const fileUrl = https://raw.githubusercontent.com${file.path};
-        const fileContent = await fetch(fileUrl).then(res => res.text());
-        zip.file(file.path, fileContent);
-      }
+      await Promise.all(files.map(async file => {
+        const fileUrl = `https://raw.githubusercontent.com${file.path}`;
+        const fileContent = await fetch(fileUrl);
+
+        if (!fileContent.ok) {
+          throw new Error(`Failed to fetch file content: ${fileContent.statusText}`);
+        }
+
+        const fileContentText = await fileContent.text();
+        zip.file(file.path, fileContentText);
+      }));
 
       // Generate and trigger download of the zip file
       zip.generateAsync({ type: 'blob' }).then(blob => {
@@ -31,7 +42,7 @@ const App = () => {
         document.body.removeChild(downloadLink);
       });
     } catch (error) {
-      console.error('Error downloading files:', error);
+      console.error('Error downloading files:', error.message);
     }
   };
 
