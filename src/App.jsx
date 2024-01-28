@@ -18,9 +18,20 @@ function App() {
     // Perform actions based on the provided URL
     const match = url.match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
+  
+    // window.transformedPart = transformedPart;
     if (match) {
-      const [, owner, repo, , folder] = match;
+      const [fullMatch, owner, repo, branch, folder] = match;
 
+      // console.log("Full Match:", fullMatch);
+      // console.log("Owner:", owner);
+      // console.log("Repo:", repo);
+      // console.log("Branch:", branch);
+      // console.log("Folder:", folder); 
+      window.owner = owner;
+      window.repo = repo;
+      window.branch = branch;
+      window.folder = folder;
       // If folder is not provided, assume the whole repository is intended for download
       if (!folder) {
         const confirmDownload = window.confirm(
@@ -59,7 +70,7 @@ function App() {
     const pastedText = event.clipboardData.getData('text');
     // Remove extra spaces from the pasted text
     const url = pastedText.trim();
-    console.log(event)
+    // console.log(event)
     setTimeout(() => {
       downRepo(url)
     }, 500);
@@ -92,7 +103,7 @@ function App() {
           const objectURL = URL.createObjectURL(content);
           const a = document.createElement('a');
           a.href = objectURL;
-          a.download = `archive.zip`;
+          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
           document.body.appendChild(a);
           a.click();
           URL.revokeObjectURL(objectURL);
