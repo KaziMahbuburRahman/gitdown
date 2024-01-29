@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
+import HomeIcon from './icons/HomeIcon';
 
 // import ThemeChanger from '../shared/ThemeChanger/ThemeChanger';
 // import SettingsIcon from '../assets/svg/SettingsIcon'
@@ -14,14 +15,47 @@ export const NavbarComponent = ({ openModal }) => {
   };
 
   
+  const NavMenus = (
+    <>
+      <li className='border-none lg:mr-6 py-2 lg:py-0'>
+        <button onClick={handleScrollToTop} to="/" className={({ isActive }) =>
+          isActive ? "text-white btn btn-primary" : "btn glass text-black"
+        }> 
+        <span className='hidden lg:block'>
+          <HomeIcon/>
+        </span> 
+        <span className='lg:hidden block'>
+          Home
+        </span> 
+        </button>
+      </li>
 
+      
+      <li className='py-2 lg:py-0 lg:mr-6'>
+        <button to="/saved-codes" className={({ isActive }) =>
+          isActive ? "text-white btn btn-primary" : "btn glass text-black"
+        }>Saved Codes</button>
+      </li>
+
+      <li className='py-2 lg:py-0'>
+        <button to="/contact" className={({ isActive }) =>
+          isActive ? "text-white btn btn-primary" : "btn glass text-black"
+        }>Feedback</button>
+      </li>
+      {/* <li className='lg:hidden py-2 lg:py-0'>
+        <button to="/bteb/developers" className={({ isActive }) =>
+          isActive ? "text-white btn btn-primary" : "btn glass text-black"
+        }>Developers</button>
+      </li> */}
+    </>
+  )
 
   return (
     <div className="navbar glass sticky top-0 z-50 md:px-16 lg:px-32">
     <div className="navbar-start">
 
       <div className="dropdown">
-        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <label tabIndex={0} className="flex lg:hidden">
           {/* menu icon */}
           <label className={`swap swap-rotate `}>
 
@@ -38,7 +72,7 @@ export const NavbarComponent = ({ openModal }) => {
 
         </label>
         <ul tabIndex={0} className={`${menuOpen ? 'block' : 'hidden'} menu menu-compact dropdown-content mt-4 p-2 shadow bg-base-100 rounded-box w-60`}>
-          {/* {NavMenus} */}
+          {NavMenus}
         </ul>
       </div>
       {/* <img alt="" className='w-8 md:w-10' /> */}
@@ -46,7 +80,7 @@ export const NavbarComponent = ({ openModal }) => {
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
-        {/* {NavMenus} */}
+        {NavMenus}
       </ul>
     </div>
     <div className="navbar-end  md:flex">
