@@ -1,4 +1,5 @@
 import JSZip from 'jszip';
+import { NavbarComponent } from './NavbarComponent';
 
 function App() {
 
@@ -113,96 +114,102 @@ function App() {
 
   return (
     <div>
-      {/* Input field for the URL */}
-      <div className="flex justify-center items-center min-h-screen min-w-full">
-      <form className='flex justify-center items-center' onSubmit={handleButtonClick}>
-        <input type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
+      <header>
+        <NavbarComponent />
+      </header>
+      <div className='container max-w-[960px] my-0 mx-auto'>
+        {/* Input field for the URL */}
 
-        {/* Button to trigger the action */}
-        <button
-          type='submit'
-          style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
-          className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
-        >
-          Download
-        </button>
+        <form className='flex justify-center items-center mx-8 my-5' onSubmit={handleButtonClick}>
+          <input className='w-[100%] mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
 
-      </form>
+          {/* Button to trigger the action */}
+          <button
+            type='submit'
+            style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+            className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+          >
+            Download
+          </button>
+
+
+        </form>
+
+        {/* loading */}
+        <div className="text-center hidden" style={{ display: 'inline' }}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink"
+            style={{ margin: 'auto', background: '#fff', display: 'block' }}
+            width="200px"
+            height="100px"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="xMidYMid"
+          >
+            <g transform="translate(20 50)">
+              <circle cx="0" cy="0" r="6" fill="#e15b64">
+                <animateTransform
+                  attributeName="transform"
+                  type="scale"
+                  begin="-0.375s"
+                  calcMode="spline"
+                  keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
+                  values="0;1;0"
+                  keyTimes="0;0.5;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+            <g transform="translate(40 50)">
+              <circle cx="0" cy="0" r="6" fill="#f8b26a">
+                <animateTransform
+                  attributeName="transform"
+                  type="scale"
+                  begin="-0.25s"
+                  calcMode="spline"
+                  keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
+                  values="0;1;0"
+                  keyTimes="0;0.5;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+            <g transform="translate(60 50)">
+              <circle cx="0" cy="0" r="6" fill="#abbd81">
+                <animateTransform
+                  attributeName="transform"
+                  type="scale"
+                  begin="-0.125s"
+                  calcMode="spline"
+                  keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
+                  values="0;1;0"
+                  keyTimes="0;0.5;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+            <g transform="translate(80 50)">
+              <circle cx="0" cy="0" r="6" fill="#81a3bd">
+                <animateTransform
+                  attributeName="transform"
+                  type="scale"
+                  begin="0s"
+                  calcMode="spline"
+                  keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
+                  values="0;1;0"
+                  keyTimes="0;0.5;1"
+                  dur="1s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+            </g>
+          </svg>
+        </div>
       </div>
-      {/* loading */}
-      <div className="text-center hidden" style={{ display: 'inline' }}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        style={{ margin: 'auto', background: '#fff', display: 'block' }}
-        width="200px"
-        height="100px"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="xMidYMid"
-      >
-        <g transform="translate(20 50)">
-          <circle cx="0" cy="0" r="6" fill="#e15b64">
-            <animateTransform
-              attributeName="transform"
-              type="scale"
-              begin="-0.375s"
-              calcMode="spline"
-              keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
-              values="0;1;0"
-              keyTimes="0;0.5;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-        <g transform="translate(40 50)">
-          <circle cx="0" cy="0" r="6" fill="#f8b26a">
-            <animateTransform
-              attributeName="transform"
-              type="scale"
-              begin="-0.25s"
-              calcMode="spline"
-              keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
-              values="0;1;0"
-              keyTimes="0;0.5;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-        <g transform="translate(60 50)">
-          <circle cx="0" cy="0" r="6" fill="#abbd81">
-            <animateTransform
-              attributeName="transform"
-              type="scale"
-              begin="-0.125s"
-              calcMode="spline"
-              keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
-              values="0;1;0"
-              keyTimes="0;0.5;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-        <g transform="translate(80 50)">
-          <circle cx="0" cy="0" r="6" fill="#81a3bd">
-            <animateTransform
-              attributeName="transform"
-              type="scale"
-              begin="0s"
-              calcMode="spline"
-              keySplines="0.3 0 0.7 1;0.3 0 0.7 1"
-              values="0;1;0"
-              keyTimes="0;0.5;1"
-              dur="1s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        </g>
-      </svg>
-    </div>
     </div>
   );
 }
