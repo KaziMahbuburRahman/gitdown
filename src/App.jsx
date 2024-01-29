@@ -18,7 +18,7 @@ function App() {
     // Perform actions based on the provided URL
     const match = url.match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
-  
+
     // window.transformedPart = transformedPart;
     if (match) {
       const [fullMatch, owner, repo, branch, folder] = match;
@@ -58,7 +58,7 @@ function App() {
 
           alert('This is an invalid or private repository. Please make it public for a while to download it.')
         });
-        
+
     } else {
       alert('Please Enter a Github Repository URL');
     }
@@ -118,7 +118,14 @@ function App() {
         <input type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
         {/* Button to trigger the action */}
-        <button type='submit'>Generate Archive</button>
+        <button
+          type='submit'
+          className="text-xl w-32 h-16 text-center align-middle m-0-auto bg-sky-700 rounded-md hover:bg-slate-700 border-0 border-none  text-white duration-1000 focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-2xl shadow-sky-700 "
+        >
+          Generate
+        </button>
+
+
       </form>
     </div>
   );
