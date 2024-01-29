@@ -120,9 +120,10 @@ function App() {
         {/* Button to trigger the action */}
         <button
           type='submit'
-          className="text-xl w-32 h-16 text-center align-middle m-0-auto bg-sky-700 rounded-md hover:bg-slate-700 border-0 border-none  text-white duration-1000 focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-2xl shadow-sky-700 "
+          style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+          className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
         >
-          Generate
+          Download
         </button>
 
 
