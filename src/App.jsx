@@ -121,19 +121,19 @@ function App() {
 
   };
 
-  function zipFiles(files) {
+  function zipFiles(files, archiveName = 'archive.zip') {
     const zip = new JSZip();
   
     const processItem = (item, path = '') => {
       if (item.type === 'file') {
-        // If it's a file, fetch and add it to the ZIP archive
         return fetch(item.download_url)
           .then(response => response.blob())
           .then(blob => {
-            zip.file(path + item.name, blob);
+            // Remove leading directories from file path
+            const fileName = item.name.replace(/^.*[\\\/]/, '');
+            zip.file(path + fileName, blob);
           });
       } else if (item.type === 'dir') {
-        // If it's a directory, recursively process its contents
         return fetch(item.url)
           .then(response => response.json())
           .then(contents => {
@@ -141,44 +141,19 @@ function App() {
             return Promise.all(subPromises);
           });
       }
-      // For unknown types, return a resolved promise
       return Promise.resolve();
     };
   
-    // Process each item in the provided files array
     const promises = files.map(item => processItem(item));
   
-    // Wait for all promises to resolve before generating the ZIP
     Promise.all(promises).then(() => {
-      // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
-                const objectURL = URL.createObjectURL(content);
-      const sizeBytes = content.size;
-
-      let sizeDisplay, sizeUnit;
-
-      if (sizeBytes > 0) {
-        const sizeKB = sizeBytes / 1024;
-        if (sizeKB >= 1) {
-          sizeDisplay = sizeKB.toFixed(2);
-          sizeUnit = 'KB';
-        } else {
-          sizeDisplay = sizeBytes.toFixed(2);
-          sizeUnit = 'Bytes';
-        }
-      } else {
-        // If size is zero, display as 0.00 KB
-        sizeDisplay = '0.00';
-        sizeUnit = 'KB';
-      }
-
-      setsizeMB(`${sizeDisplay} ${sizeUnit}`);
-          console.log(sizeMB);
-          console.log(objectURL);
+          const objectURL = URL.createObjectURL(content);
+  
           const a = document.createElement('a');
           a.href = objectURL;
-          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
+          a.download = archiveName;
           document.body.appendChild(a);
           a.click();
           URL.revokeObjectURL(objectURL);
