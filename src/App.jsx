@@ -2,6 +2,7 @@ import JSZip from 'jszip';
 import { NavbarComponent } from './NavbarComponent';
 import LoadingIcon from './icons/LoadingIcon';
 import { useEffect } from 'react';
+import Footer from './Footer';
 
 
 
@@ -138,7 +139,7 @@ function App() {
       <header>
         <NavbarComponent />
       </header>
-      <div className='container bg-white max-w-[960px] mx-auto rounded-lg my-5 p-5'>
+      <div className='container bg-white min-h-screen max-w-[960px] mx-auto rounded-lg my-5 p-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
@@ -161,6 +162,7 @@ function App() {
         {/* loading */}
         {/* <LoadingIcon /> */}
       </div>
+      <Footer />
     </div>
   );
 }
