@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'
 import HomeIcon from './icons/HomeIcon';
+import SettingsIcon from './icons/SettingsIcon';
 
 // import ThemeChanger from '../shared/ThemeChanger/ThemeChanger';
 // import SettingsIcon from '../assets/svg/SettingsIcon'
@@ -55,7 +56,7 @@ export const NavbarComponent = ({ openModal }) => {
     <div className="navbar-start">
 
       <div className="dropdown">
-        <label tabIndex={0} className="flex lg:hidden">
+        <label tabIndex={0} className="flex sm:btn sm:btn-ghost lg:hidden">
           {/* menu icon */}
           <label className={`swap swap-rotate `}>
 
@@ -89,7 +90,7 @@ export const NavbarComponent = ({ openModal }) => {
         className="btn btn-sm btn-primary rounded-full h-8 w-8 right-1 top-1/3"
       >
         <span className={`animate-spin-slow text-lg text-white`}>
-          {/* <SettingsIcon /> */}
+          <SettingsIcon />
         </span>
 
       </label>
