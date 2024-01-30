@@ -1,24 +1,16 @@
 import JSZip from 'jszip';
 import { NavbarComponent } from './NavbarComponent';
 import LoadingIcon from './icons/LoadingIcon';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from './Footer';
 
 
 
 
 function App() {
+  const [owner, setOwner] = useState('');
+  const [repo, setRepo] = useState('');
 
-  function thumbImg(owner, repo) {
-    // Create an image element
-    const img = document.createElement('img');
-    img.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
-    img.alt = '';
-    img.srcset = '';
-
-    // Append the image to the document body
-    document.body.appendChild(img);
-  }
   // useEffect(() => {
   //   // Call thumbImg when the component mounts
   //   thumbImg(window.owner, window.repo);
@@ -50,6 +42,8 @@ function App() {
       // console.log("Folder:", folder); 
       window.owner = owner;
       window.repo = repo;
+      setOwner(owner);
+      setRepo(repo);
       window.branch = branch;
       window.folder = folder;
       // If folder is not provided, assume the whole repository is intended for download
@@ -70,13 +64,12 @@ function App() {
       fetch(githubAPI)
         .then(response => response.json())
         .then(data => {
-          thumbImg(owner, repo);
           // Filter out only files from the data
           //will uncomment later
           const files = data.filter(item => item.type === 'file');
-          console.log(files);
+          // console.log(files);
           // // Call the zipFiles function with the filtered files
-          // zipFiles(files);
+          zipFiles(files);
         }).catch(() => {
 
           alert('This is an invalid or private repository. Please make it public for a while to download it.')
@@ -124,12 +117,13 @@ function App() {
       zip.generateAsync({ type: 'blob' })
         .then(content => {
           const objectURL = URL.createObjectURL(content);
-          const a = document.createElement('a');
-          a.href = objectURL;
-          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
-          document.body.appendChild(a);
-          a.click();
-          URL.revokeObjectURL(objectURL);
+          console.log(objectURL);
+          // const a = document.createElement('a');
+          // a.href = objectURL;
+          // a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
+          // document.body.appendChild(a);
+          // a.click();
+          // URL.revokeObjectURL(objectURL);
         });
     });
   }
@@ -158,7 +152,16 @@ function App() {
 
 
         </form>
+        <div className='flex justify-center items-center'>
+          <button
+            type='submit'
+            style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+            className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+          >
+            Download
+          </button>
 
+        </div>
         {/* loading */}
         {/* <LoadingIcon /> */}
       </div>
