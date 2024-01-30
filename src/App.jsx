@@ -10,6 +10,7 @@ import Footer from './Footer';
 function App() {
   const [owner, setOwner] = useState('');
   const [repo, setRepo] = useState('');
+  const [sizeMB, setsizeMB] = useState('');
 
   // useEffect(() => {
   //   // Call thumbImg when the component mounts
@@ -116,7 +117,12 @@ function App() {
       // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
+
           const objectURL = URL.createObjectURL(content);
+          console.log(content);
+          const sizeMB = (content.size / (1024 * 1024)).toFixed(2);
+          setsizeMB(sizeMB);
+          console.log(sizeMB);
           console.log(objectURL);
           // const a = document.createElement('a');
           // a.href = objectURL;
@@ -160,7 +166,10 @@ function App() {
           >
             Download
           </button>
-
+          <div>
+            <img src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`} alt=""/>
+            <h2>size: {sizeMB} MB</h2>
+          </div>
         </div>
         {/* loading */}
         {/* <LoadingIcon /> */}
