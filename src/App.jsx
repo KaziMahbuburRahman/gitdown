@@ -10,7 +10,10 @@ import Footer from './Footer';
 function App() {
   const [owner, setOwner] = useState('');
   const [repo, setRepo] = useState('');
+  const [downloadLink, setDownloadLink] = useState('');
+  const [downloadFileName, setDownloadFileName] = useState('');
   const [sizeMB, setsizeMB] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
   // useEffect(() => {
   //   // Call thumbImg when the component mounts
@@ -162,12 +165,18 @@ function App() {
           setsizeMB(`${sizeDisplay} ${sizeUnit}`);
           console.log(sizeMB);
           console.log(objectURL);
-          const a = document.createElement('a');
-          a.href = objectURL;
-          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
-          document.body.appendChild(a);
-          a.click();
-          URL.revokeObjectURL(objectURL);
+          // const a = document.createElement('a');
+          // a.href = objectURL;
+          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
+          console.log(downloadFileName);
+          setDownloadLink(objectURL);
+          setDownloadFileName(downloadFileName);
+          // setFileName(`${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`);
+          // document.body.appendChild(a);
+          // // saveas
+          // saveas(objectURL, `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`);
+          // a.click();
+          // URL.revokeObjectURL(objectURL);
         });
     });
   }
@@ -196,9 +205,41 @@ function App() {
 
 
         </form>
+
+        {/* <label htmlFor="my-modal-3" className="btn">open modal</label> */}
+
+        {/* Put this part before </body> tag */}
+        {/* Modal */}
+        <div>
+          <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box relative">
+              <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+              <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
+              <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+            </div>
+          </div>
+        </div>
+
         <div className='flex justify-center items-center'>
+
           <button
-            type='submit'
+            onClick={() => {
+
+              const a = document.createElement('a');
+              a.href = downloadLink;
+              a.download = downloadFileName;
+              console.log(downloadLink)
+              console.log(downloadFileName)
+              document.body.appendChild(a);
+              a.click();
+              //delay
+              setTimeout(() => {
+                document.getElementById('my-modal-3').checked = true;
+              }, 400);
+              // document.getElementById('my-modal-3').checked = true;
+              // URL.revokeObjectURL(downloadLink);
+            }}
             style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
             className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
           >
