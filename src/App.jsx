@@ -133,10 +133,27 @@ function App() {
       // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
-          const objectURL = URL.createObjectURL(content);
-          console.log(content);
-          const sizeMB = (content.size / (1024 * 1024)).toFixed(2);
-          setsizeMB(sizeMB);
+                const objectURL = URL.createObjectURL(content);
+      const sizeBytes = content.size;
+
+      let sizeDisplay, sizeUnit;
+
+      if (sizeBytes > 0) {
+        const sizeKB = sizeBytes / 1024;
+        if (sizeKB >= 1) {
+          sizeDisplay = sizeKB.toFixed(2);
+          sizeUnit = 'KB';
+        } else {
+          sizeDisplay = sizeBytes.toFixed(2);
+          sizeUnit = 'Bytes';
+        }
+      } else {
+        // If size is zero, display as 0.00 KB
+        sizeDisplay = '0.00';
+        sizeUnit = 'KB';
+      }
+
+      setsizeMB(`${sizeDisplay} ${sizeUnit}`);
           console.log(sizeMB);
           console.log(objectURL);
           const a = document.createElement('a');
@@ -183,7 +200,7 @@ function App() {
           </button>
           <div>
             <img src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`} alt=""/>
-            <h2>size: {sizeMB} MB</h2>
+            <h2>size: {sizeMB}</h2>
           </div>
         </div>
         {/* loading */}
