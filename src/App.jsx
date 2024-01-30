@@ -27,25 +27,7 @@ function App() {
   const downRepo = (url) => {
     // console.log('URL:', url);
     // Access the input field value using useRef
-    const isSingleFile = url.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)/);
 
-    if (isSingleFile) {
-      const [fullMatch, owner, repo, branch, filePath] = isSingleFile;
-      const fileName = filePath.split('/').pop();
-      
-      const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
-  
-      fetch(githubAPI)
-        .then(response => response.json())
-        .then(data => {
-          const file = data;
-          zipFiles([file], fileName);
-        })
-        .catch(() => {
-          alert('Error fetching file information. Please make sure the URL is correct and the file exists.');
-        });
-    } else {
-      
     // Perform actions based on the provided URL
     const match = url.match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
@@ -87,7 +69,7 @@ function App() {
           // Filter out only files from the data
           //will uncomment later
           // const files = data.filter(item => item.type === 'file');
-          
+
           // // Call the zipFiles function with the filtered files
           zipFiles(data);
         }).catch(() => {
@@ -98,9 +80,7 @@ function App() {
     } else {
       alert('Please Enter a Github Repository URL');
     }
-    }
   }
-
 
   const handlePaste = (event) => {
     // Handle paste event
@@ -121,19 +101,19 @@ function App() {
 
   };
 
-  function zipFiles(files, archiveName = 'archive.zip') {
+  function zipFiles(files) {
     const zip = new JSZip();
-  
+
     const processItem = (item, path = '') => {
       if (item.type === 'file') {
+        // If it's a file, fetch and add it to the ZIP archive
         return fetch(item.download_url)
           .then(response => response.blob())
           .then(blob => {
-            // Remove leading directories from file path
-            const fileName = item.name.replace(/^.*[\\\/]/, '');
-            zip.file(path + fileName, blob);
+            zip.file(path + item.name, blob);
           });
       } else if (item.type === 'dir') {
+        // If it's a directory, recursively process its contents
         return fetch(item.url)
           .then(response => response.json())
           .then(contents => {
@@ -141,26 +121,57 @@ function App() {
             return Promise.all(subPromises);
           });
       }
+      // For unknown types, return a resolved promise
       return Promise.resolve();
     };
-  
+
+    // Process each item in the provided files array
     const promises = files.map(item => processItem(item));
-  
+
+    // Wait for all promises to resolve before generating the ZIP
     Promise.all(promises).then(() => {
+      // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
+          const sizeBytes = content.size;
+          console.log(sizeBytes);
           const objectURL = URL.createObjectURL(content);
-  
+          let sizeDisplay, sizeUnit;
+
+          if (sizeBytes >= 1024 * 1024 * 1024 * 1024) {
+            const sizeTB = sizeBytes / (1024 * 1024 * 1024 * 1024);
+            sizeDisplay = sizeTB.toFixed(2);
+            sizeUnit = 'TB';
+          } else if (sizeBytes >= 1024 * 1024 * 1024) {
+            const sizeGB = sizeBytes / (1024 * 1024 * 1024);
+            sizeDisplay = sizeGB.toFixed(2);
+            sizeUnit = 'GB';
+          } else if (sizeBytes >= 1024 * 1024) {
+            const sizeMB = sizeBytes / (1024 * 1024);
+            sizeDisplay = sizeMB.toFixed(2);
+            sizeUnit = 'MB';
+          } else if (sizeBytes >= 1024) {
+            const sizeKB = sizeBytes / 1024;
+            sizeDisplay = sizeKB.toFixed(2);
+            sizeUnit = 'KB';
+          } else {
+            sizeDisplay = sizeBytes.toFixed(2);
+            sizeUnit = 'Bytes';
+          }
+
+          setsizeMB(`${sizeDisplay} ${sizeUnit}`);
+          console.log(sizeMB);
+          console.log(objectURL);
           const a = document.createElement('a');
           a.href = objectURL;
-          a.download = archiveName;
+          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
           document.body.appendChild(a);
           a.click();
           URL.revokeObjectURL(objectURL);
         });
     });
   }
-  
+
   return (
     <div className='bg-slate-300'>
       <header>
@@ -194,7 +205,7 @@ function App() {
             Download
           </button>
           <div>
-            <img src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`} alt=""/>
+            <img src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`} alt="" />
             <h2>size: {sizeMB}</h2>
           </div>
         </div>
