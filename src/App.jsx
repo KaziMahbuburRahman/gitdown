@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 function App() {
-  
+
   function thumbImg(owner, repo) {
     // Create an image element
     const img = document.createElement('img');
@@ -72,10 +72,10 @@ function App() {
           thumbImg(owner, repo);
           // Filter out only files from the data
           //will uncomment later
-          // const files = data.filter(item => item.type === 'file');
+          const files = data.filter(item => item.type === 'file');
+          console.log(files);
           // // Call the zipFiles function with the filtered files
           // zipFiles(files);
-          saveAs(data[0].download_url, `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`)
         }).catch(() => {
 
           alert('This is an invalid or private repository. Please make it public for a while to download it.')
@@ -134,13 +134,14 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='bg-slate-300'>
       <header>
         <NavbarComponent />
       </header>
-      <div className='container max-w-[960px] my-0 mx-auto'>
+      <div className='container bg-white max-w-[960px] mx-auto rounded-lg my-5 p-5'>
         {/* Input field for the URL */}
-
+        <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
+        <p className='text-center mt-5'>Download github repository and folders for free!</p>
         <form className='flex justify-center items-center mx-8 my-5' onSubmit={handleButtonClick}>
           <input className='w-[100%] mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
