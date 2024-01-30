@@ -3,6 +3,8 @@ import { NavbarComponent } from './NavbarComponent';
 import LoadingIcon from './icons/LoadingIcon';
 import { useEffect, useState } from 'react';
 import Footer from './Footer';
+import CheckIcon from './icons/CheckIcon';
+import DownloadIcon from './icons/DownloadIcon';
 
 
 
@@ -183,7 +185,28 @@ function App() {
           // URL.revokeObjectURL(objectURL);
         });
     });
+    
   }
+
+  const downloadImage = async () => {
+    const imageUrl = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
+
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const objectURL = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = objectURL;
+      a.download = `${owner}_${repo}_image.png`; // You can customize the filename
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(objectURL);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+    }
+  };
 
   return (
     <div className='bg-slate-300'>
@@ -228,13 +251,23 @@ function App() {
         {
           sizeMB && (<div className='flex justify-center items-center'>
             <div className='w-[75%]'>
-              <h2 className='text-2xl font-semibold'>Zipped {data.length} Files</h2>
 
-              {/* //files name one by one */}
-              {data.map((item) => (
-                <p>{item.name}</p>
-              ))}
+              {/* list */}
+              <div className="max-w-[350px] my-20 shadow-md py-8 pl-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-6">
 
+                <p className="text-sky-900 font-semibold">Zipped {data.length} Files</p>
+                <ul className="space-y-3">
+                  {data.map((item) => (
+                    <li className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
+
+                  ))}
+
+
+                </ul>
+                <div className="mr-8">
+                  <button className="py-4 w-full bg-gradient-to-r from-[#52b7ff] to-[#0084ff] rounded-full uppercase text-white font-semibold text-lg tracking-wider">get started</button>
+                </div>
+              </div>
               <h2 className='text-xl font-bold  text-gray-700'>Size: {sizeMB}</h2>
 
               <button
@@ -279,33 +312,14 @@ function App() {
                   {/*  <!-- Body--> */}
                   <div className="p-6">
                     <p>
-                      Spend days here, exploring a way of life by bicycle                      
+                      Spend days here, exploring a way of life by bicycle
                     </p>
                   </div>
                   {/*  <!-- Action icon buttons --> */}
                   <div className="flex justify-end gap-2 p-2 pt-0">
                     <button className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
-                      <span className="relative only:-mx-6">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          role="graphics-symbol"
-                          aria-labelledby="title-81 desc-81"
-                        >
-                          <title id="title-81">Icon title</title>
-                          <desc id="desc-81">
-                            A more detailed description of the icon
-                          </desc>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                          />
-                        </svg>
+                      <span onClick={downloadImage} className="relative only:-mx-6">
+                        <DownloadIcon />
                       </span>
                     </button>
                     <button className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:bg-emerald-200 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
