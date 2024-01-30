@@ -1,10 +1,27 @@
 import JSZip from 'jszip';
 import { NavbarComponent } from './NavbarComponent';
 import LoadingIcon from './icons/LoadingIcon';
+import { useEffect } from 'react';
+
+
+
 
 function App() {
+  
+  function thumbImg(owner, repo) {
+    // Create an image element
+    const img = document.createElement('img');
+    img.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
+    img.alt = '';
+    img.srcset = '';
 
-
+    // Append the image to the document body
+    document.body.appendChild(img);
+  }
+  // useEffect(() => {
+  //   // Call thumbImg when the component mounts
+  //   thumbImg(window.owner, window.repo);
+  // }, []);
   // Initialize state for the URL
   // const [url, setUrl] = useState('');
 
@@ -52,10 +69,13 @@ function App() {
       fetch(githubAPI)
         .then(response => response.json())
         .then(data => {
+          thumbImg(owner, repo);
           // Filter out only files from the data
-          const files = data.filter(item => item.type === 'file');
-          // Call the zipFiles function with the filtered files
-          zipFiles(files);
+          //will uncomment later
+          // const files = data.filter(item => item.type === 'file');
+          // // Call the zipFiles function with the filtered files
+          // zipFiles(files);
+          saveAs(data[0].download_url, `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`)
         }).catch(() => {
 
           alert('This is an invalid or private repository. Please make it public for a while to download it.')
@@ -138,7 +158,7 @@ function App() {
         </form>
 
         {/* loading */}
-        <LoadingIcon />
+        {/* <LoadingIcon /> */}
       </div>
     </div>
   );
