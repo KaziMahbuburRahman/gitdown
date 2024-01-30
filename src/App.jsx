@@ -65,12 +65,13 @@ function App() {
       fetch(githubAPI)
         .then(response => response.json())
         .then(data => {
+          console.log(data);
           // Filter out only files from the data
           //will uncomment later
-          const files = data.filter(item => item.type === 'file');
-          // console.log(files);
+          // const files = data.filter(item => item.type === 'file');
+          
           // // Call the zipFiles function with the filtered files
-          zipFiles(files);
+          zipFiles(data);
         }).catch(() => {
 
           alert('This is an invalid or private repository. Please make it public for a while to download it.')
@@ -102,38 +103,52 @@ function App() {
 
   function zipFiles(files) {
     const zip = new JSZip();
-
-    const promises = files.map(item => {
-      return fetch(item.download_url)
-        .then(response => response.blob())
-        .then(blob => {
-          // Add each file to the ZIP archive
-          zip.file(item.name, blob);
-        });
-    });
-
+  
+    const processItem = (item, path = '') => {
+      if (item.type === 'file') {
+        // If it's a file, fetch and add it to the ZIP archive
+        return fetch(item.download_url)
+          .then(response => response.blob())
+          .then(blob => {
+            zip.file(path + item.name, blob);
+          });
+      } else if (item.type === 'dir') {
+        // If it's a directory, recursively process its contents
+        return fetch(item.url)
+          .then(response => response.json())
+          .then(contents => {
+            const subPromises = contents.map(subItem => processItem(subItem, path + item.name + '/'));
+            return Promise.all(subPromises);
+          });
+      }
+      // For unknown types, return a resolved promise
+      return Promise.resolve();
+    };
+  
+    // Process each item in the provided files array
+    const promises = files.map(item => processItem(item));
+  
     // Wait for all promises to resolve before generating the ZIP
     Promise.all(promises).then(() => {
       // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
-
           const objectURL = URL.createObjectURL(content);
           console.log(content);
           const sizeMB = (content.size / (1024 * 1024)).toFixed(2);
           setsizeMB(sizeMB);
           console.log(sizeMB);
           console.log(objectURL);
-          // const a = document.createElement('a');
-          // a.href = objectURL;
-          // a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
-          // document.body.appendChild(a);
-          // a.click();
-          // URL.revokeObjectURL(objectURL);
+          const a = document.createElement('a');
+          a.href = objectURL;
+          a.download = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
+          document.body.appendChild(a);
+          a.click();
+          URL.revokeObjectURL(objectURL);
         });
     });
   }
-
+  
   return (
     <div className='bg-slate-300'>
       <header>
