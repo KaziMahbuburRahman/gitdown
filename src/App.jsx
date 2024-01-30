@@ -27,7 +27,25 @@ function App() {
   const downRepo = (url) => {
     // console.log('URL:', url);
     // Access the input field value using useRef
+    const isSingleFile = url.match(/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)/);
 
+    if (isSingleFile) {
+      const [fullMatch, owner, repo, branch, filePath] = isSingleFile;
+      const fileName = filePath.split('/').pop();
+      
+      const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
+  
+      fetch(githubAPI)
+        .then(response => response.json())
+        .then(data => {
+          const file = data;
+          zipFiles([file], fileName);
+        })
+        .catch(() => {
+          alert('Error fetching file information. Please make sure the URL is correct and the file exists.');
+        });
+    } else {
+      
     // Perform actions based on the provided URL
     const match = url.match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
@@ -80,7 +98,9 @@ function App() {
     } else {
       alert('Please Enter a Github Repository URL');
     }
+    }
   }
+
 
   const handlePaste = (event) => {
     // Handle paste event
