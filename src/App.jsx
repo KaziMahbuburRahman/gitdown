@@ -276,8 +276,30 @@ function App() {
           <div className="modal">
             <div className="modal-box relative">
               <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-              <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
-              <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+              <h3 className="text-2xl font-bold text-center">Downloaded {data.length} files!</h3>
+              <p className="py-4">Thank you for using our service. If you could share our website with your friends, that would be a great help.
+              </p>
+              <div class="border-3 border-outset border-black text-center w-99 p-5">
+                <div class="bg-[#4267B2] m-5 p-3 rounded text-centera">
+                  <a href="https://facebook.com/TechHelpBDdotCom" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
+                </div>
+                <div class="bg-[#006AFF] m-5 p-3 rounded text-center">
+                  <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
+                </div>
+                <div class="bg-[#075e54] m-5 p-3 rounded text-center">
+                  <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
+                </div>
+                <div class="bg-[#5865F2] m-5 p-3 rounded text-center">
+                  <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
+                </div>
+                <div class="bg-[#0088cc] m-5 p-3 rounded text-center">
+                  <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
+                </div>
+                <div class="bg-[#FF0000] m-5 p-3 rounded text-center">
+                  <a href="https://youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YOUTUBE CHANNEL</a>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
