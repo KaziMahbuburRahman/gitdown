@@ -317,7 +317,7 @@ function App() {
                     }, 400);
                     // document.getElementById('my-modal-3').checked = true;
                     // URL.revokeObjectURL(downloadLink);
-                  }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-6 text-sm font-medium tracking-wide text-sky-900 transition duration-300 hover:border-sky-900 hover:text-emerald-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:text-emerald-300 disabled:shadow-none">
+                  }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90 ">
                     <span className="order-2">Download</span>
                     <span className="relative only:-mx-6">
                       <svg
@@ -394,12 +394,12 @@ function App() {
                   </div>
                   {/*  <!-- Action icon buttons --> */}
                   <div className="flex justify-end gap-2 p-2 pt-0 mt-2">
-                    <button onClick={downloadImage} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
+                    <button onClick={downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <DownloadIcon />
                       </span>
                     </button>
-                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
+                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
