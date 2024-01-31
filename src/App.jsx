@@ -10,8 +10,7 @@ import DownloadIcon from './icons/DownloadIcon';
 
 
 function App() {
-  const [owner, setOwner] = useState('');
-  const [repo, setRepo] = useState('');
+
   const [downloadLink, setDownloadLink] = useState('');
   const [downloadFileName, setDownloadFileName] = useState('');
   const [sizeMB, setsizeMB] = useState('');
@@ -32,6 +31,7 @@ function App() {
   // };
 
   const downRepo = (url) => {
+    console.log("url from downrepo:", url);
     // console.log('URL:', url);
     // Access the input field value using useRef
 
@@ -50,8 +50,8 @@ function App() {
       // console.log("Folder:", folder); 
       window.owner = owner;
       window.repo = repo;
-      setOwner(owner);
-      setRepo(repo);
+      // setOwner(owner);
+      // setRepo(repo);
       window.branch = branch;
       window.folder = folder;
       // If folder is not provided, assume the whole repository is intended for download
@@ -94,6 +94,7 @@ function App() {
     // Handle paste event
     console.log('Pasted:', event.clipboardData.getData('text'));
     const pastedText = event.clipboardData.getData('text');
+    console.log("pastedtext", pastedText);
     // Remove extra spaces from the pasted text
     const url = pastedText.trim();
     // console.log(event)
@@ -173,8 +174,8 @@ function App() {
           console.log(objectURL);
           // const a = document.createElement('a');
           // a.href = objectURL;
-          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
-          console.log(downloadFileName);
+          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip : ${owner}_${repo}`;
+          console.log("downloadFileName:", downloadFileName);
           setDownloadLink(objectURL);
           setDownloadFileName(downloadFileName);
           // setFileName(`${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`);
@@ -198,7 +199,7 @@ function App() {
 
       const a = document.createElement('a');
       a.href = objectURL;
-      a.download = `${owner}_${repo}_image.png`; // You can customize the filename
+      a.download = `${owner}_${repo}_thumbnail.png`; // You can customize the filename
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -249,13 +250,13 @@ function App() {
         </div>
 
         {
-          sizeMB && (<div className='flex justify-center items-center'>
-            <div className='w-[75%]'>
+          sizeMB && (<div>
+            {/* flex item 1 */}
 
-              {/* list */}
-              <div className="max-w-[350px] my-20 shadow-md py-8 pl-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-6">
+            <div className="flex min-w-full my-20 shadow-md py-8 pl-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-6">
 
-                <p className="text-sky-900 font-semibold">Zipped {data.length} Files</p>
+              <div className='flex-1'>
+                <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data.length} Files</p>
                 <ul className="space-y-3">
                   {data.map((item) => (
                     <li className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
@@ -264,40 +265,80 @@ function App() {
 
 
                 </ul>
+
+                <h2 className='mt-5 text-xl font-semibold  text-sky-900'>Size: {sizeMB}</h2>
+
                 <div className="mr-8">
-                  <button className="py-4 w-full bg-gradient-to-r from-[#52b7ff] to-[#0084ff] rounded-full uppercase text-white font-semibold text-lg tracking-wider">get started</button>
+                  <button onClick={() => {
+
+                    const a = document.createElement('a');
+                    a.href = downloadLink;
+                    a.download = downloadFileName;
+                    console.log(downloadLink)
+                    console.log(downloadFileName)
+                    document.body.appendChild(a);
+                    a.click();
+                    //delay
+                    setTimeout(() => {
+                      document.getElementById('my-modal-3').checked = true;
+                    }, 400);
+                    // document.getElementById('my-modal-3').checked = true;
+                    // URL.revokeObjectURL(downloadLink);
+                  }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-6 text-sm font-medium tracking-wide text-sky-900 transition duration-300 hover:border-sky-900 hover:text-emerald-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:text-emerald-300 disabled:shadow-none">
+                    <span className="order-2">Lead icon</span>
+                    <span className="relative only:-mx-6">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        role="graphics-symbol"
+                        aria-labelledby="title-62 desc-62"
+                      >
+                        <title id="title-62">Icon title</title>
+                        <desc id="desc-62">A more detailed description of the icon</desc>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                        />
+                      </svg>
+                    </span>
+                  </button>
                 </div>
+
+
+
+                {/* <button
+                  onClick={() => {
+
+                    const a = document.createElement('a');
+                    a.href = downloadLink;
+                    a.download = downloadFileName;
+                    console.log(downloadLink)
+                    console.log(downloadFileName)
+                    document.body.appendChild(a);
+                    a.click();
+                    //delay
+                    setTimeout(() => {
+                      document.getElementById('my-modal-3').checked = true;
+                    }, 400);
+                    // document.getElementById('my-modal-3').checked = true;
+                    // URL.revokeObjectURL(downloadLink);
+                  }}
+                  style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+                  className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+                >
+                  Download
+                </button> */}
+
               </div>
-              <h2 className='text-xl font-bold  text-gray-700'>Size: {sizeMB}</h2>
 
-              <button
-                onClick={() => {
 
-                  const a = document.createElement('a');
-                  a.href = downloadLink;
-                  a.download = downloadFileName;
-                  console.log(downloadLink)
-                  console.log(downloadFileName)
-                  document.body.appendChild(a);
-                  a.click();
-                  //delay
-                  setTimeout(() => {
-                    document.getElementById('my-modal-3').checked = true;
-                  }, 400);
-                  // document.getElementById('my-modal-3').checked = true;
-                  // URL.revokeObjectURL(downloadLink);
-                }}
-                style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
-                className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
-              >
-                Download
-              </button>
-            </div>
 
-            <div>
-
-              <>
-                {/*<!-- Component: Social story card --> */}
+              <div className='flex-1 flextwo'>
                 <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
                   {/*  <!-- Header--> */}
 
@@ -312,17 +353,17 @@ function App() {
                   {/*  <!-- Body--> */}
                   <div className="p-6">
                     <p>
-                      Spend days here, exploring a way of life by bicycle
+                      {`${owner}_${repo}_thumbnail.png`}
                     </p>
                   </div>
                   {/*  <!-- Action icon buttons --> */}
                   <div className="flex justify-end gap-2 p-2 pt-0">
                     <button onClick={downloadImage} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
                       <span className="relative only:-mx-6">
-                                              <DownloadIcon />
+                        <DownloadIcon />
                       </span>
                     </button>
-                    <button onClick={navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`)} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
+                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
                       <span className="relative only:-mx-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -347,10 +388,15 @@ function App() {
                       </span>
                     </button>
                   </div>
+
+
+
                 </div>
-                {/*<!-- End Social story card --> */}
-              </>
+              </div>
             </div>
+
+
+
           </div>)
         }
         {/* loading */}
