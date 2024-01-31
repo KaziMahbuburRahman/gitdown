@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from "../src/img/octocat.png";
+import Logo from "./img/downgit-brain.png";
 
 export default function Preloader() {
     return (
