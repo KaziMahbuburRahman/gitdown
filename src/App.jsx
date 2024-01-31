@@ -16,6 +16,10 @@ function App() {
   const [sizeMB, setsizeMB] = useState('');
   const [data, setData] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [warning, setWarning] = useState(false);
+
+
 
 
   // useEffect(() => {
@@ -56,14 +60,7 @@ function App() {
       window.folder = folder;
       // If folder is not provided, assume the whole repository is intended for download
       if (!folder) {
-        const confirmDownload = window.confirm(
-          `⚠️ Warning!\n\nYou have entered a full GitHub repository URL instead of a folder URL.\nAre you sure you want to download the entire repository '${url}'?`
-        );
-
-
-        if (!confirmDownload) {
-          return;
-        }
+        setWarning(true)
       }
 
       const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${folder || ''}`;
@@ -218,7 +215,7 @@ function App() {
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
-        <form className='flex justify-center items-center mx-8 my-5' onSubmit={handleButtonClick}>
+        <form className='flex justify-center items-center my-5' onSubmit={handleButtonClick}>
           <input className='w-[100%] mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
 
@@ -233,6 +230,42 @@ function App() {
 
 
         </form>
+        {/* warning msg start */}
+        {sizeMB && warning && <div
+          className="flex w-full items-start gap-4 rounded border border-amber-100 bg-amber-50 px-4 py-3 text-sm text-amber-500"
+          role="alert"
+        >
+          {/*  <!-- Icon --> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            role="graphics-symbol"
+            aria-labelledby="title-07 desc-07"
+          >
+            <title id="title-07">Icon title</title>
+            <desc id="desc-07">A more detailed description of the icon</desc>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          {/*  <!-- Text --> */}
+          {/* warning message */}
+          <div>
+            <h3 className="mb-2 font-semibold">
+              You have entered a GitHub repository URL instead of a folder URL!
+            </h3>
+            <p>
+              You will download the entire repository instead of a github folder.
+            </p>
+          </div>
+        </div>}
+
         {loading && !sizeMB && <LoadingIcon />}
         {/* <label htmlFor="my-modal-3" className="btn">open modal</label> */}
 
@@ -253,7 +286,7 @@ function App() {
           sizeMB && (<div>
             {/* flex item 1 */}
 
-            <div className="flex min-w-full my-20 shadow-md py-8 pl-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-6">
+            <div className="flex min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-10 space-x-5">
 
               <div className='flex-1'>
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data.length} Files</p>
@@ -285,7 +318,7 @@ function App() {
                     // document.getElementById('my-modal-3').checked = true;
                     // URL.revokeObjectURL(downloadLink);
                   }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 px-6 text-sm font-medium tracking-wide text-sky-900 transition duration-300 hover:border-sky-900 hover:text-emerald-600 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:text-emerald-300 disabled:shadow-none">
-                    <span className="order-2">Lead icon</span>
+                    <span className="order-2">Download</span>
                     <span className="relative only:-mx-6">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -338,8 +371,11 @@ function App() {
 
 
 
-              <div className='flex-1 flextwo'>
-                <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
+              <div className='flex-1 pt-2'>
+
+                <div className="overflow-hidden rounded bg-white text-slate-500 ">
+
+
                   {/*  <!-- Header--> */}
 
                   {/*  <!-- Image --> */}
@@ -351,13 +387,13 @@ function App() {
                     />
                   </figure>
                   {/*  <!-- Body--> */}
-                  <div className="p-6">
+                  <div className="p-6 mt-5">
                     <p>
                       {`${owner}_${repo}_thumbnail.png`}
                     </p>
                   </div>
                   {/*  <!-- Action icon buttons --> */}
-                  <div className="flex justify-end gap-2 p-2 pt-0">
+                  <div className="flex justify-end gap-2 p-2 pt-0 mt-2">
                     <button onClick={downloadImage} className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium tracking-wide text-emerald-500 transition duration-300 hover:bg-emerald-100 hover:text-emerald-600 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-emerald-300 disabled:shadow-none disabled:hover:bg-transparent">
                       <span className="relative only:-mx-6">
                         <DownloadIcon />
