@@ -281,7 +281,7 @@ function App() {
               </p>
               <div class="border-3 border-outset border-black text-center w-99 p-5">
                 <div class="bg-[#4267B2] m-5 p-3 rounded text-centera">
-                  <a href="https://facebook.com/TechHelpBDdotCom" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
+                  <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
                 </div>
                 <div class="bg-[#006AFF] m-5 p-3 rounded text-center">
                   <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
@@ -336,7 +336,7 @@ function App() {
                     //delay
                     setTimeout(() => {
                       document.getElementById('my-modal-3').checked = true;
-                    }, 400);
+                    }, 500);
                     // document.getElementById('my-modal-3').checked = true;
                     // URL.revokeObjectURL(downloadLink);
                   }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90 ">
