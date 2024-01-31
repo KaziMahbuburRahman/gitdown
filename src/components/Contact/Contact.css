@@ -1,0 +1,12 @@
+.contact-container {
+    background-color: #f5f6fa;
+    background-image: url('../../assets/images/contact.png');
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.bg-img-overlay {
+    background-color: #06121c;
+    opacity: .9;
+    transition: background .3s, border-radius .3s, opacity .3s;
+}

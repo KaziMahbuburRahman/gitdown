@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.12.1",
     "daisyui": "^2.42.1",
     "jszip": "^3.10.1",
     "react": "^18.2.0",
