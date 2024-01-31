@@ -286,7 +286,7 @@ function App() {
           sizeMB && (<div>
             {/* flex item 1 */}
 
-            <div className="flex min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff] space-y-10 space-x-5">
+            <div className="flex justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
 
               <div className='flex-1'>
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data.length} Files</p>
@@ -373,7 +373,7 @@ function App() {
 
               <div className='flex-1 pt-2'>
 
-                <div className="overflow-hidden rounded bg-white text-slate-500 ">
+                <div className="overflow-hidden rounded bg-white text-slate-500">
 
 
                   {/*  <!-- Header--> */}
