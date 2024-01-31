@@ -42,7 +42,7 @@ const Contact = () => {
     return (
         <>
             <NavbarComponent openModal={openModal} />
-            <ThemeChanger isModalOpen={isModalOpen} closeModal={closeModal} daisyTheme={daisyTheme} setDaisyTheme={setDaisyTheme} />
+            {/* <ThemeChanger isModalOpen={isModalOpen} closeModal={closeModal} daisyTheme={daisyTheme} setDaisyTheme={setDaisyTheme} /> */}
 {/* 
             <ToastContainer
                 position="top-right"
