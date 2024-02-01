@@ -6,7 +6,7 @@ import Footer from './Footer';
 import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ThemeChanger from './shared/ThemeChanger';
-
+import ReactDOM from "react-dom"
 
 
 
@@ -207,20 +207,14 @@ function App() {
     }
   };
 
-  const [isModalOpen, setModalOpen] = useState(false);
-  const openModal = () => {
-    setModalOpen(true);
-  }
-  const closeModal = () => {
-    setModalOpen(false);
-  }
-  const [daisyTheme, setDaisyTheme] = useState('');
+  const [isShowing, setIsShowing] = useState(false)
+
 
   return (
     <div className='bg-slate-300'>
       <header className='bg-white'>
-        <NavbarComponent openModal={openModal} />
-        <ThemeChanger isModalOpen={isModalOpen} closeModal={closeModal} daisyTheme={daisyTheme} setDaisyTheme={setDaisyTheme} />
+        <NavbarComponent />
+
       </header>
       <div className='container bg-white min-h-screen max-w-[960px] mx-auto rounded-lg my-5 p-5'>
         {/* Input field for the URL */}
@@ -281,39 +275,95 @@ function App() {
         {/* <label htmlFor="my-modal-3" className="btn">open modal</label> */}
 
         {/* Put this part before </body> tag */}
-        {/* Modal */}
-        <div>
-          <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-          <div className="modal">
-            <div className="modal-box relative">
-              <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-              <h3 className="text-2xl font-bold text-center">Downloaded {data.length} files!</h3>
-              <p className="py-4">Thank you for using our service. If you could share our website with your friends, that would be a great help.
-              </p>
-              <div class="border-3 border-outset border-black text-center w-99 p-5">
-                <div class="bg-[#4267B2] m-5 p-3 rounded text-centera">
-                  <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
-                </div>
-                <div class="bg-[#006AFF] m-5 p-3 rounded text-center">
-                  <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
-                </div>
-                <div class="bg-[#075e54] m-5 p-3 rounded text-center">
-                  <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
-                </div>
-                <div class="bg-[#5865F2] m-5 p-3 rounded text-center">
-                  <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
-                </div>
-                <div class="bg-[#0088cc] m-5 p-3 rounded text-center">
-                  <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
-                </div>
-                <div class="bg-[#FF0000] m-5 p-3 rounded text-center">
-                  <a href="https://youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YOUTUBE CHANNEL</a>
+
+        {/* New Modal */}
+
+
+        {isShowing && typeof document !== "undefined"
+          ? ReactDOM.createPortal(
+            <div
+              className="fixed top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-slate-300/20 backdrop-blur-sm"
+              aria-labelledby="header-3a content-3a"
+              aria-modal="true"
+              tabindex="-1"
+              role="dialog"
+            >
+              {/*    <!-- Modal --> */}
+              <div
+                // ref={wrapperRef}
+                className="flex max-h-[90vh] w-11/12 max-w-xl flex-col gap-6 overflow-hidden rounded bg-white p-6 text-slate-500 shadow-xl shadow-slate-700/10"
+                id="modal"
+                role="document"
+              >
+                {/*        <!-- Modal header --> */}
+                <header id="header-3a" className="flex items-center gap-4">
+                  <h3 className="flex-1 text-xl font-medium text-slate-700">
+                    Downloaded {data.length} files!
+                  </h3>
+
+                  <button
+                    onClick={() => setIsShowing(false)}
+                    className="inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-wide text-gray-500 transition duration-300 hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-200 focus:text-gray-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:text-gray-300 disabled:shadow-none disabled:hover:bg-transparent"
+                    aria-label="close dialog"
+                  >
+                    <span className="relative only:-mx-5">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        role="graphics-symbol"
+                        aria-labelledby="title-79 desc-79"
+                      >
+                        <title id="title-79">Icon title</title>
+                        <desc id="desc-79">
+                          A more detailed description of the icon
+                        </desc>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </header>
+                {/*        <!-- Modal body --> */}
+                <div id="content-3a" className="flex-1 overflow-auto">
+                  <p>
+                    Thank you for using our service. If you could share our website with your friends, that would be a great help.
+                  </p>
+                  <div class="border-3 border-outset border-black text-center w-99 p-5">
+                    <div class="bg-[#4267B2] m-5 p-3 rounded text-centera">
+                      <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
+                    </div>
+                    <div class="bg-[#006AFF] m-5 p-3 rounded text-center">
+                      <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
+                    </div>
+                    <div class="bg-[#075e54] m-5 p-3 rounded text-center">
+                      <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
+                    </div>
+                    <div class="bg-[#5865F2] m-5 p-3 rounded text-center">
+                      <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
+                    </div>
+                    <div class="bg-[#0088cc] m-5 p-3 rounded text-center">
+                      <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
+                    </div>
+                    <div class="bg-[#FF0000] m-5 p-3 rounded text-center">
+                      <a href="https://youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YOUTUBE CHANNEL</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>,
+            document.body
+          )
+          : null}
 
-            </div>
-          </div>
-        </div>
+
+       
 
         {
           sizeMB && (<div>
@@ -346,7 +396,7 @@ function App() {
                     a.click();
                     //delay
                     setTimeout(() => {
-                      document.getElementById('my-modal-3').checked = true;
+                      setIsShowing(true)
                     }, 500);
                     // document.getElementById('my-modal-3').checked = true;
                     // URL.revokeObjectURL(downloadLink);
