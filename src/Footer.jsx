@@ -7,7 +7,7 @@ const Footer = () => {
         {/*    <!-- Main footer --> */}
         <div className="pt-16 pb-12 text-sm border-t border-gray-600 bg-[#3d4451]">
           <div className="container px-6 mx-auto">
-            <div className="flex justify-around">
+            <div className="flex flex-col sm:flex-row justify-around">
               <nav
                 className="col-span-2 md:col-span-4 lg:col-span-3"
                 aria-labelledby="footer-header"
