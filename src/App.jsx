@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Footer from './Footer';
 import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
+import ThemeChanger from './shared/ThemeChanger';
 
 
 
@@ -206,10 +207,20 @@ function App() {
     }
   };
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  const openModal = () => {
+    setModalOpen(true);
+  }
+  const closeModal = () => {
+    setModalOpen(false);
+  }
+  const [daisyTheme, setDaisyTheme] = useState('');
+
   return (
     <div className='bg-slate-300'>
       <header>
-        <NavbarComponent />
+        <NavbarComponent openModal={openModal} />
+        <ThemeChanger isModalOpen={isModalOpen} closeModal={closeModal} daisyTheme={daisyTheme} setDaisyTheme={setDaisyTheme} />
       </header>
       <div className='container bg-white min-h-screen max-w-[960px] mx-auto rounded-lg my-5 p-5'>
         {/* Input field for the URL */}
