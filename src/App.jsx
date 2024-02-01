@@ -541,7 +541,7 @@ function App() {
                   </h2>
                     <p className='text-center'>Our platform allows you to download videos in various resolutions, including 1080p, 2k, and even 4k. This means you can enjoy your content in the highest quality possible, just as the creator intended.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
+                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-slate-600">
                     <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clipRule="evenodd" />
                     <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
                   </svg>
@@ -550,7 +550,7 @@ function App() {
                   </h2>
                     <p className='text-center'>Yt5s is designed for ease of use. Our simple and intuitive interface allows you to download and convert videos in just a few clicks, without the need for any technical knowledge or expertise.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
+                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-amber-400">
                     <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clipRule="evenodd" />
                   </svg>
                     <span className='text-gray-700 text-center'>No Software Installation Required</span></h2>
@@ -563,7 +563,7 @@ function App() {
                     <span className='text-gray-700'>Fast Download Speeds</span></h2>
                     <p className='text-center'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant video gratification.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
+                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
                     <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
                   </svg>
                     <span className='text-gray-700'>100% Virus Free</span></h2>
@@ -571,6 +571,11 @@ function App() {
                   </div>
                 </div>
               </div>
+            </section>
+
+            <section>
+              <h2 className='text-center text-gray-700 text-3xl font-bold'>The Best Youtube Downloader</h2>
+              <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!</p>
             </section>
           </div>
         }
