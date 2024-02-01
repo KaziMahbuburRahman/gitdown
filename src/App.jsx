@@ -218,7 +218,7 @@ function App() {
 
   return (
     <div className='bg-slate-300'>
-      <header>
+      <header className='bg-white'>
         <NavbarComponent openModal={openModal} />
         <ThemeChanger isModalOpen={isModalOpen} closeModal={closeModal} daisyTheme={daisyTheme} setDaisyTheme={setDaisyTheme} />
       </header>
