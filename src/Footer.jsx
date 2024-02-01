@@ -13,10 +13,10 @@ const Footer = () => {
                 aria-labelledby="footer-header"
               >
 
-               <img className='mx-auto h-32 w-32 mb-5' src="/src/img/downgit-brain.png" alt="" srcset="" />
+                <img className='mx-auto h-32 w-32 mb-5' src="/src/img/GitDown-brain.png" alt="" srcset="" />
                 <p className='max-w-[26rem]'>
-                  DownGit is a Github Folder Downloader powered by Tech Help BD! <br /> <br />
-                  We are excited to provide you with a user-friendly online platform to download your code. Downgit can download any github repository or folder. <br />
+                  GitDown is a Github Folder Downloader powered by Tech Help BD! <br /> <br />
+                  We are excited to provide you with a user-friendly online platform to download your code. GitDown can download any github repository or folder. <br />
                   <br />
 
                   Please feel free to provide any feedback to help us improve your experience. <br /> <br />
@@ -45,9 +45,9 @@ const Footer = () => {
                     <a className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" href='https://techhelpbd.com/about-us' target='_blank' rel='noopener noreferrer'>About Us</a>
                   </li>
                   <li className="mb-2 leading-6">
-                  <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/contact">Contact Us</Link>
+                    <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/contact">Contact Us</Link>
                   </li>
-                  
+
                   <li className="mb-2 leading-6">
                     <a
                       href="#"

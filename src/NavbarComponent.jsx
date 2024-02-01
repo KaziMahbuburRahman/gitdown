@@ -88,13 +88,13 @@ export const NavbarComponent = ({ openModal }) => {
               </div>
             </button>
 
-           
+
             <div className='mx-auto flex justify-between items-center max-w-[960px]'>
 
-               {/*      <!-- Brand logo --> */}
+              {/*      <!-- Brand logo --> */}
               <div>
                 <button>
-                  <Link to="/" onClick={handleScrollToTop} className="btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"> TechHelpBD <strong className="text-blue-500">|</strong> DownGit</Link>
+                  <Link to="/" onClick={handleScrollToTop} className="btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"> TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
                 </button>
               </div>
               {/*      <!-- Navigation links --> */}
