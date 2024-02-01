@@ -33,9 +33,7 @@ export const NavbarComponent = ({ openModal }) => {
 
 
       <li className='py-2 lg:py-0 lg:mr-6'>
-        <button to="/saved-codes" className={({ isActive }) =>
-          isActive ? "text-white btn btn-primary" : "btn glass text-black"
-        }>Saved Codes</button>
+        <a href='https://techhelpbd.com' target='blank' className="btn glass text-black">Blog</a>
       </li>
 
       <li className='py-2 lg:py-0'>
