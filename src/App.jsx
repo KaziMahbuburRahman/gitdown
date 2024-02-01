@@ -575,7 +575,36 @@ function App() {
 
             <section>
               <h2 className='text-center text-gray-700 text-3xl font-bold'>The Best Youtube Downloader</h2>
-              <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!</p>
+              <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
+                Upvote us on producthunt to make us No 1
+              </p>
+            </section>
+
+            <section>
+              <h2 className='text-center text-gray-700 text-3xl font-bold'>How to Download YouTube Videos</h2>
+              <div>
+
+                <ul class="list-none flex justify-between items-center flex-row space-x-6">
+                  <li class="flex items-start">
+                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">1</span>
+                    <span>Simply</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">2</span>
+                    <span>Choose</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">3</span>
+                    <span>Wait</span>
+                  </li>
+                </ul>
+
+              </div>
+
+
+
+
+
             </section>
           </div>
         }
