@@ -47,7 +47,7 @@ function App() {
     // window.transformedPart = transformedPart;
     if (match) {
       const [fullMatch, owner, repo, branch, folder] = match;
-
+      setWarning(false)
       // console.log("Full Match:", fullMatch);
       // console.log("Owner:", owner);
       // console.log("Repo:", repo);
@@ -212,23 +212,23 @@ function App() {
 
   return (
     <div className='bg-slate-300'>
-      <header className='bg-white'>
+      <header>
         <NavbarComponent />
 
       </header>
-      <div className='container bg-white min-h-screen max-w-[960px] mx-auto rounded-lg my-5 p-5'>
+      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg:my-5 p-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
-        <form className='flex justify-center items-center my-5' onSubmit={handleButtonClick}>
-          <input className='w-[100%] mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
+        <form className='flex flex-col sm:flex-row justify-center items-center my-5' onSubmit={handleButtonClick}>
+          <input className='w-[100%] mr-auto mb-5 sm:mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
 
           {/* Button to trigger the action */}
           <button
             type='submit'
             style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
-            className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+            className="w-full mb-5 sm:w-auto text-xl px-10 py-5 text-center align-middle  bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
           >
             Download
           </button>
@@ -363,13 +363,13 @@ function App() {
           : null}
 
 
-       
+
 
         {
           sizeMB && (<div>
             {/* flex item 1 */}
 
-            <div className="flex justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
+            <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
 
               <div className='flex-1'>
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data.length} Files</p>
@@ -453,10 +453,9 @@ function App() {
               </div>
 
 
+              <div className='flex-1 pt-2 max-w-full overflow-x-auto'>
 
-              <div className='flex-1 pt-2'>
-
-                <div className="overflow-hidden rounded bg-white text-slate-500">
+                <div className="min-w-full overflow-hidden rounded bg-white text-slate-500">
 
 
                   {/*  <!-- Header--> */}
@@ -466,7 +465,7 @@ function App() {
                     <img
                       src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
                       alt="card image"
-                      className="w-full"
+                      className="w-auto overflow-hidden"
                     />
                   </figure>
                   {/*  <!-- Body--> */}
