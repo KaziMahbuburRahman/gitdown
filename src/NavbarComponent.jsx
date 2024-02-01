@@ -7,9 +7,8 @@ import SettingsIcon from './icons/SettingsIcon';
 // import SettingsIcon from '../assets/svg/SettingsIcon'
 // import HomeIcon from '../assets/svg/HomeIcon';
 
-export const NavbarComponent = ({ openModal }) => {
+export const NavbarComponent = () => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const [isToggleOpen, setIsToggleOpen] = useState(false)
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -94,7 +93,8 @@ export const NavbarComponent = ({ openModal }) => {
               {/*      <!-- Brand logo --> */}
               <div>
                 <button>
-                  <Link to="/" onClick={handleScrollToTop} className="btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"> TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
+                  <NavLink to="/" onClick={handleScrollToTop} className={({ isActive }) =>
+                    isActive ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</NavLink>
                 </button>
               </div>
               {/*      <!-- Navigation links --> */}
