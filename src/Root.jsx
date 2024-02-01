@@ -47,14 +47,13 @@ function Root() {
         setTimeout(() => {
             setLoading(false);
         }, 1000);
-        console.log('rendering');
     }, []);
 
-    useEffect(() => {
-        document.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-        });
-    }, []);
+    // useEffect(() => {
+    //     document.addEventListener("contextmenu", (e) => {
+    //         e.preventDefault();
+    //     });
+    // }, []);
 
     return (
         <>
