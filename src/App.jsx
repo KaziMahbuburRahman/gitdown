@@ -352,7 +352,7 @@ function App() {
                       <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
                     </div>
                     <div class="bg-[#FF0000] m-5 p-3 rounded text-center">
-                      <a href="https://youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YOUTUBE CHANNEL</a>
+                      <a href="https://Youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YouTube CHANNEL</a>
                     </div>
                   </div>
                 </div>
@@ -516,87 +516,102 @@ function App() {
 
 
           </div>) : <div>
-            <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>YouTube Video Downloader Free Online at yt5s.best</h2>
-            <p className='text-center'>Are you tired of struggling to download your favorite YouTube videos? Do you want a fast, reliable, and user-friendly solution to enjoy your beloved content offline? Look no further! Yt5s YouTube Video Downloader is here to revolutionize your video downloading experience.
+            <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>Free Online Github Folder Downloader</h2>
+            <p className='text-center mb-10'>Are you tired of struggling to download your favorite Github Folders? Do you want a fast, reliable, and user-friendly solution to enjoy your beloved code offline? Look no further! GitDown Github Folder Downloader is here to revolutionize your Folder downloading experience.
 
-              Discover the seamless experience with YT5s YouTube Downloader, enabling you to effortlessly download your desired YouTube videos in high-quality for convenient offline viewing.</p>
+              Discover the seamless experience with GitDown Github Downloader, enabling you to effortlessly download your desired Github Folders in high-quality for convenient offline viewing.</p>
 
-            <section>
+            <section className='mb-10'>
               <div className="container px-6 m-auto">
                 <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
                   <div className="col-span-4">
-                    <h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 text-sky-500">
+                    <h2 className='mr-5 sm:mr-20 lg:mr-10  flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-12 h-12 text-sky-500">
                       <path fillRule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" clipRule="evenodd" />
                       <path d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z" />
                     </svg>
-                      <span className='text-gray-700 text-center'>Multiple Format Support</span></h2>
-                    <p className='my-5 text-center'>GitDown can download both github repository and folders</p>
+                    </h2>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Multiple Format Support</h2>
+                    <p className='text-left'>GitDown can download both github repository and folders</p>
                   </div>
-                  <div className=" col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
+                  <div className=" col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
                     <path fillRule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z" clipRule="evenodd" />
                     <path fillRule="evenodd" d="M3 9.375C3 8.339 3.84 7.5 4.875 7.5h9.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 0 1 3 20.625V9.375ZM6 12a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V12Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 15a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V15Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75ZM6 18a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H6.75a.75.75 0 0 1-.75-.75V18Zm2.25 0a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                   </svg>
-                    <span className='text-gray-700'>Paste & Download</span>
+
 
                   </h2>
-                    <p className='text-center'>Our platform allows you to download videos in various resolutions, including 1080p, 2k, and even 4k. This means you can enjoy your content in the highest quality possible, just as the creator intended.</p>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Paste & Download Folders</h2>
+                    <p className='text-left'>If you paste the Github url on input field then our algorithm will detect the url and automatically convert the files for you. No more hassle for pressing Enter button.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-slate-600">
+                  <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-slate-600">
                     <path fillRule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clipRule="evenodd" />
                     <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
                   </svg>
-                    <span className='text-gray-700 text-center'>User-Friendly Interface</span>
+
 
                   </h2>
-                    <p className='text-center'>Yt5s is designed for ease of use. Our simple and intuitive interface allows you to download and convert videos in just a few clicks, without the need for any technical knowledge or expertise.</p>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>User-Friendly Interface</h2>
+                    <p className='text-left'>GitDown is designed for ease of use. Our simple and intuitive interface allows you to download and convert Folders in just a few clicks, without the need for any technical knowledge or expertise.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-amber-400">
+                  <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-amber-400">
                     <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clipRule="evenodd" />
                   </svg>
-                    <span className='text-gray-700 text-center'>No Software Installation Required</span></h2>
-                    <p className='text-center'>Unlike many other video downloaders, Yt5s is an online tool that doesn't require you to install any software on your device. Simply visit our website, enter the video URL, and start downloading your favorite content.</p>
+                  </h2>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>No Software Installation Required</h2>
+                    <p className='text-left'>Unlike many other Folder downloaders, GitDown is an online tool that doesn't require you to install any software on your device. Simply visit our website, enter the Folder URL, and start downloading your favorite code.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 text-red-500">
+                  <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 text-red-500">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                   </svg>
 
-                    <span className='text-gray-700'>Fast Download Speeds</span></h2>
-                    <p className='text-center'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant video gratification.</p>
+                  </h2>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Fast Download Speeds</h2>
+                    <p className='text-left'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant Folder gratification.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
+                  <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
                     <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
                   </svg>
-                    <span className='text-gray-700'>100% Virus Free</span></h2>
-                    <p>Yt5s is compatible with various platforms, including Windows, Mac OS X, iOS, and Android. This ensures that you can use the tool on your preferred device and operating system.</p>
+                  </h2>
+                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>100% Virus Free Files</h2>
+                    <p>GitDown downloads the folder's files from official Github website and then zip them together. Thats why our generated zip files are always safe as Github</p>
                   </div>
                 </div>
               </div>
             </section>
 
-            <section className='my-5'>
-              <h2 className='text-center text-gray-700 text-3xl font-bold'>The Best Youtube Downloader</h2>
-              <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
+            <section className='my-10'>
+              <h2 className='mb-5 text-center text-gray-700 text-3xl font-bold'>The Best Github Downloader</h2>
+              <p className='text-center'>So, what are you waiting for? Give GitDown Github Folder Downloader a try today and experience the ultimate in Folder downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
                 Upvote us on producthunt to make us No 1
               </p>
             </section>
 
-            <section className='mb-5'>
-              <h2 className='text-center text-gray-700 text-3xl font-bold'>How to Download YouTube Videos</h2>
-              <div>
+            <section className='mb-10'>
+              <h2 className='mb-5 text-center text-gray-700 text-3xl font-bold'>How to Download Github Folders</h2>
+              <div className='flex justify-center items-center'>
 
-                <ul class="list-none flex justify-between items-center flex-row space-x-6">
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">1</span>
-                    <span>Simply</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">2</span>
-                    <span>Choose</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">3</span>
-                    <span>Wait</span>
-                  </li>
+                <ul class="list-none flex max-w-[23rem] md:max-w-full flex-col md:flex-row justify-center items-center">
+                  <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
+                    <li class="flex items-start flex-1">
+                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2 mb-2">1</span>
+
+                    </li>
+                    <li><span>Simply Enter your desired Github folder link</span></li>
+                  </div>
+                  <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
+                    <li class="flex items-start flex-1">
+                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-red-200 text-red-500 mr-2 mb-2">2</span>
+                    </li>
+                    <li><span>Wait briefly for the zip conversion to finish</span></li>
+                  </div>
+                  <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
+                    <li class="flex items-start flex-1">
+                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-green-200 text-green-500 mr-2 mb-2">3</span>
+                    </li>
+                    <li>
+                      <span>Then click on download button to save the zip file on your device</span>
+                    </li>
+                  </div>
                 </ul>
 
               </div>
@@ -607,11 +622,12 @@ function App() {
 
             </section>
 
-
+            <h2 className='text-3xl font-bold text-center mb-5 text-gray-700'>Frequently Asked Questions</h2>
             <section className="w-full divide-y divide-slate-200 rounded border border-slate-200 bg-white">
+
               <details className="group p-4" open>
                 <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  Which languages are available for the components?
+                  Is it legal to download Github folders using GitDown?
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
@@ -633,15 +649,14 @@ function App() {
                   </svg>
                 </summary>
                 <p className="mt-4 text-slate-500">
-                  Wind UI team currently releases it's components on HTML and React,
-                  but also thinking on adding more in the future. You can easily
-                  toggle between the two languages through the code blocks, on each
-                  page component.
+                  Look Github already allowing you to download the repository from their website. But Github doesn’t let you download a single folder from a repository, which might be necessary when you just need a few files from a large repository. That's why we made this tool to help you download the folder from Github.
+                  <br /> <br />
+                  So, it's completely legal to download the folder from Github using GitDown.
                 </p>
               </details>
               <details className="group p-4">
                 <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  Which icons are you using in the components?
+                  Can I download the entire repository also using GitDown?
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
@@ -663,13 +678,15 @@ function App() {
                   </svg>
                 </summary>
                 <p className="mt-4 text-slate-500">
-                  All our icons related ui components are using, heroicons SVG icons,
-                  by the makers of Tailwind CSS.
+                  Yes, sometimes you may change your decision to download whole repository instead of a single folder.
+                  <br /> In that case, you can simply paste the repository link on the input field and then click on the download button. Our algorithm will detect the repository and then convert the entire repository as a zip file for you.
+                  <br /><br />
+                  But you may see a warning message. Don't worry, it's just because to let you know that you are downloading the entire repository instead of a folder.
                 </p>
               </details>
               <details className="group p-4">
                 <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  How can I learn about the latest changes?
+                  How can I unzip the zipped Github folder?
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
@@ -691,13 +708,12 @@ function App() {
                   </svg>
                 </summary>
                 <p className="mt-4 text-slate-500">
-                  You can find all latest additions and updates in our Changelog page,
-                  where we have a detailed timeline for any changes.
-                </p>
+                  You can use any kind of zip extractor like <a className='font-bold' href="https://www.7-zip.org/" target="_blank" rel="noopener noreferrer">7-Zip </a>
+                  or <a className='font-bold' href="https://www.win-rar.com/" target="_blank" rel="noopener noreferrer">Winrar</a> to unzip and access the files which are zipped inside the Github folder.</p>
               </details>
               <details className="group p-4">
                 <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  Where can I find the official TailwindCSS documentation?
+                  Is GitDown safe to use?
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
@@ -719,9 +735,7 @@ function App() {
                   </svg>
                 </summary>
                 <p className="mt-4 text-slate-500">
-                  You can find the official TailwindCSS detailed documentation as well
-                  as the official TailwindCSS website link on our footer under
-                  Resources.
+                  GitDown is considered a safe and clean service, with no viruses and under intense supervision based on a security algorithm. However, always practice caution while using any online tool and ensure you have up-to-date security software on your device.
                 </p>
               </details>
             </section>
