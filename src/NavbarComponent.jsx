@@ -54,7 +54,7 @@ export const NavbarComponent = () => {
         <div className="relative mx-auto max-w-full px-6">
           <nav
             aria-label="main navigation"
-            className="flex lg:inline h-[5.5rem] items-stretch justify-between font-medium text-slate-700"
+            className="flex lg:inline h-[3.5rem] items-stretch justify-between font-medium text-slate-700"
             role="navigation"
           >
 
