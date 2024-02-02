@@ -79,11 +79,15 @@ function App() {
           zipFiles(data);
         }).catch(() => {
 
-          alert('This is an invalid or private repository. Please make it public for a while to download it.')
+          setError('This is an invalid or private repository!')
+          setLoading(false);
+          return;
         });
 
     } else {
-      alert('Please Enter a Github Repository URL');
+      setError('Please Enter a Github Repository URL!');
+      setLoading(false);
+      return;
     }
   }
 
@@ -271,7 +275,49 @@ function App() {
           </div>
         </div>}
 
+        {/* warning msg end */}
+
+        {/* error msg start */}
+
+
+
         {loading && !sizeMB && <LoadingIcon />}
+
+        {error && !loading && <div
+          className="flex w-full items-start gap-4 rounded border border-pink-100 bg-pink-50 px-4 py-3 text-sm text-pink-500"
+          role="alert"
+        >
+
+          {/*  <!-- Icon --> */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 shrink-0"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            role="graphics-symbol"
+            aria-labelledby="title-09 desc-09"
+          >
+            <title id="title-09">Icon title</title>
+            <desc id="desc-09">A more detailed description of the icon</desc>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          {/*  <!-- Text --> */}
+          <div>
+            <h3 className="mb-2 font-semibold">{error}</h3>
+            <p>
+              If this repository is private then please make it public for a while to download it.{" "}
+            </p>
+          </div>
+        </div>
+        }
+
+
         {/* <label htmlFor="my-modal-3" className="btn">open modal</label> */}
 
         {/* Put this part before </body> tag */}
@@ -530,7 +576,7 @@ function App() {
                       <path d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z" />
                     </svg>
                     </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Multiple Format Support</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>Multiple Format Support</h2>
                     <p className='text-left'>GitDown can download both github repository and folders</p>
                   </div>
                   <div className=" col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
@@ -540,7 +586,7 @@ function App() {
 
 
                   </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Paste & Download Folders</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>Paste & Download Folders</h2>
                     <p className='text-left'>If you paste the Github url on input field then our algorithm will detect the url and automatically convert the files for you. No more hassle for pressing Enter button.</p>
                   </div>
                   <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-slate-600">
@@ -550,14 +596,14 @@ function App() {
 
 
                   </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>User-Friendly Interface</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>User-Friendly Interface</h2>
                     <p className='text-left'>GitDown is designed for ease of use. Our simple and intuitive interface allows you to download and convert Folders in just a few clicks, without the need for any technical knowledge or expertise.</p>
                   </div>
                   <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-amber-400">
                     <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-2.625 6c-.54 0-.828.419-.936.634a1.96 1.96 0 0 0-.189.866c0 .298.059.605.189.866.108.215.395.634.936.634.54 0 .828-.419.936-.634.13-.26.189-.568.189-.866 0-.298-.059-.605-.189-.866-.108-.215-.395-.634-.936-.634Zm4.314.634c.108-.215.395-.634.936-.634.54 0 .828.419.936.634.13.26.189.568.189.866 0 .298-.059.605-.189.866-.108.215-.395.634-.936.634-.54 0-.828-.419-.936-.634a1.96 1.96 0 0 1-.189-.866c0-.298.059-.605.189-.866Zm2.023 6.828a.75.75 0 1 0-1.06-1.06 3.75 3.75 0 0 1-5.304 0 .75.75 0 0 0-1.06 1.06 5.25 5.25 0 0 0 7.424 0Z" clipRule="evenodd" />
                   </svg>
                   </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>No Software Installation Required</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>No Software Installation Required</h2>
                     <p className='text-left'>Unlike many other Folder downloaders, GitDown is an online tool that doesn't require you to install any software on your device. Simply visit our website, enter the Folder URL, and start downloading your favorite code.</p>
                   </div>
                   <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 text-red-500">
@@ -565,14 +611,14 @@ function App() {
                   </svg>
 
                   </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>Fast Download Speeds</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>Fast Download Speeds</h2>
                     <p className='text-left'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant Folder gratification.</p>
                   </div>
                   <div className="col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
                     <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
                   </svg>
                   </h2>
-                    <h2 className='my-3 text-xl font-bold text-gray-700 text-left'>100% Virus Free Files</h2>
+                    <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>100% Virus Free Files</h2>
                     <p>GitDown downloads the folder's files from official Github website and then zip them together. Thats why our generated zip files are always safe as Github</p>
                   </div>
                 </div>
