@@ -19,7 +19,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [warning, setWarning] = useState(false);
-
+  const [urlInput, setUrlInput] = useState('');
 
 
 
@@ -41,7 +41,8 @@ function App() {
     // Access the input field value using useRef
 
     // Perform actions based on the provided URL
-    const match = url.match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
+
+    const match = url.replace(/\s/g, '').match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
 
     // window.transformedPart = transformedPart;
@@ -92,13 +93,15 @@ function App() {
   }
 
   const handlePaste = (event) => {
+    setData('');
+    setsizeMB('');
     setLoading(true);
     // Handle paste event
     console.log('Pasted:', event.clipboardData.getData('text'));
-    const pastedText = event.clipboardData.getData('text');
-    console.log("pastedtext", pastedText);
+    const url = event.clipboardData.getData('text')
+    // console.log("pastedtext", pastedText);
     // Remove extra spaces from the pasted text
-    const url = pastedText.trim();
+    // const url = pastedText.trim();
     // console.log(event)
     setTimeout(() => {
       downRepo(url)
@@ -225,8 +228,32 @@ function App() {
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
         <form className='flex flex-col sm:flex-row justify-center items-center my-5' onSubmit={handleButtonClick}>
-          <input className='w-[100%] mr-auto mb-5 sm:mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
+          <div className="relative w-full max-w-full sm:mr-5">
+            <input
 
+              onChange={(e) => setUrlInput((e.target.value))}
+              value={urlInput}
+              className='w-full mr-auto mb-5 sm:mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
+
+
+            {
+              urlInput ? <span
+                className='absolute top-[36px] right-[12px] transform -translate-y-1/2 text-red-500 cursor-pointer'
+                onClick={() => {
+                  setUrlInput('')
+                  setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData('')
+
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
+                </svg>
+              </span> : sizeMB || error ?
+                (setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''))
+                : null
+            }
+
+          </div>
 
           {/* Button to trigger the action */}
           <button
@@ -344,7 +371,7 @@ function App() {
                 {/*        <!-- Modal header --> */}
                 <header id="header-3a" className="flex items-center gap-4">
                   <h3 className="flex-1 text-xl font-medium text-slate-700">
-                    Downloaded {data.length} files!
+                    Downloaded {data?.length} files!
                   </h3>
 
                   <button
@@ -418,9 +445,10 @@ function App() {
             <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
 
               <div className='flex-1'>
-                <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data.length} Files</p>
+                {console.log(data)}
+                <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data?.length} Files</p>
                 <ul className="space-y-3">
-                  {data.map((item) => (
+                  {data?.map((item) => (
                     <li className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
 
                   ))}
