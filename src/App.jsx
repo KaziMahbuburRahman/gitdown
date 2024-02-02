@@ -556,185 +556,185 @@ function App() {
                     <span className='text-gray-700 text-center'>No Software Installation Required</span></h2>
                     <p className='text-center'>Unlike many other video downloaders, Yt5s is an online tool that doesn't require you to install any software on your device. Simply visit our website, enter the video URL, and start downloading your favorite content.</p>
                   </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-red-600">
-                    <path fillRule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z" clipRule="evenodd" />
+                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-12 w-12 text-red-500">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
                   </svg>
 
                     <span className='text-gray-700'>Fast Download Speeds</span></h2>
-                    <p className='text-center'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant video gratification.</p>
-                  </div>
-                  <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
-                    <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
-                  </svg>
-                    <span className='text-gray-700'>100% Virus Free</span></h2>
-                    <p>Yt5s is compatible with various platforms, including Windows, Mac OS X, iOS, and Android. This ensures that you can use the tool on your preferred device and operating system.</p>
-                  </div>
+                  <p className='text-center'>We understand that time is precious, so we have optimized our platform to provide you with the fastest download speeds possible. Say goodbye to long waiting times and hello to instant video gratification.</p>
+                </div>
+                <div className="col-span-4"><h2 className='flex flex-col justify-center items-center text-2xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-green-600">
+                  <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
+                </svg>
+                  <span className='text-gray-700'>100% Virus Free</span></h2>
+                  <p>Yt5s is compatible with various platforms, including Windows, Mac OS X, iOS, and Android. This ensures that you can use the tool on your preferred device and operating system.</p>
                 </div>
               </div>
-            </section>
-
-            <section>
-              <h2 className='text-center text-gray-700 text-3xl font-bold'>The Best Youtube Downloader</h2>
-              <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
-                Upvote us on producthunt to make us No 1
-              </p>
-            </section>
-
-            <section>
-              <h2 className='text-center text-gray-700 text-3xl font-bold'>How to Download YouTube Videos</h2>
-              <div>
-
-                <ul class="list-none flex justify-between items-center flex-row space-x-6">
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">1</span>
-                    <span>Simply</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">2</span>
-                    <span>Choose</span>
-                  </li>
-                  <li class="flex items-start">
-                    <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">3</span>
-                    <span>Wait</span>
-                  </li>
-                </ul>
-
-              </div>
-
-
-
-
-
-            </section>
-
-
-            <section className="w-full divide-y divide-slate-200 rounded bg-white shadow-md shadow-slate-200">
-              <details className="group p-4" open>
-                <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  How do I know what comes next?
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-labelledby="title-ac13 desc-ac13"
-                  >
-                    <title id="title-ac13">Open icon</title>
-                    <desc id="desc-ac13">
-                      icon that represents the state of the summary
-                    </desc>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-slate-500">
-                  Whenever the team is brewing something new, you will be able to find
-                  it, grayed out, on the main component page as well as the websites
-                  side navigation. The new component name will be there with a "coming
-                  next" badge.
-                </p>
-              </details>
-              <details className="group p-4">
-                <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  How do I know what is new?
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-labelledby="title-ac14 desc-ac14"
-                  >
-                    <title id="title-ac14">Open icon</title>
-                    <desc id="desc-ac14">
-                      icon that represents the state of the summary
-                    </desc>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-slate-500">
-                  You will always get notified about new components through our
-                  discord and other social accounts. You can also see the newest
-                  components on the main component page as well as the websites side
-                  navigation with a "new" badge next to their name.
-                </p>
-              </details>
-              <details className="group p-4">
-                <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  How do I know what is updated?
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-labelledby="title-ac15 desc-ac15"
-                  >
-                    <title id="title-ac15">Open icon</title>
-                    <desc id="desc-ac15">
-                      icon that represents the state of the summary
-                    </desc>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-slate-500">
-                  All updated components will be accompanied by an "updated" badge.
-                  YOu will be able to see that on our main components page as well as
-                  our side navigation.
-                </p>
-              </details>
-              <details className="group p-4">
-                <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
-                  How will I know about any major releases or news?
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-labelledby="title-ac16 desc-ac16"
-                  >
-                    <title id="title-ac16">Open icon</title>
-                    <desc id="desc-ac16">
-                      icon that represents the state of the summary
-                    </desc>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                </summary>
-                <p className="mt-4 text-slate-500">
-                  You will get notified by us about any major news or releases through
-                  our newsletter and our social accounts.
-                </p>
-              </details>
-            </section>
-            
           </div>
-        }
-        {/* loading */}
-        {/* <LoadingIcon /> */}
-      </div>
-      <Footer />
+            </section>
+
+      <section>
+        <h2 className='text-center text-gray-700 text-3xl font-bold'>The Best Youtube Downloader</h2>
+        <p className='text-center'>So, what are you waiting for? Give Yt5s YouTube Video Downloader a try today and experience the ultimate in video downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
+          Upvote us on producthunt to make us No 1
+        </p>
+      </section>
+
+      <section>
+        <h2 className='text-center text-gray-700 text-3xl font-bold'>How to Download YouTube Videos</h2>
+        <div>
+
+          <ul class="list-none flex justify-between items-center flex-row space-x-6">
+            <li class="flex items-start">
+              <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">1</span>
+              <span>Simply</span>
+            </li>
+            <li class="flex items-start">
+              <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">2</span>
+              <span>Choose</span>
+            </li>
+            <li class="flex items-start">
+              <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2">3</span>
+              <span>Wait</span>
+            </li>
+          </ul>
+
+        </div>
+
+
+
+
+
+      </section>
+
+
+      <section className="w-full divide-y divide-slate-200 rounded bg-white shadow-md shadow-slate-200">
+        <details className="group p-4" open>
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+            How do I know what comes next?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-labelledby="title-ac13 desc-ac13"
+            >
+              <title id="title-ac13">Open icon</title>
+              <desc id="desc-ac13">
+                icon that represents the state of the summary
+              </desc>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </summary>
+          <p className="mt-4 text-slate-500">
+            Whenever the team is brewing something new, you will be able to find
+            it, grayed out, on the main component page as well as the websites
+            side navigation. The new component name will be there with a "coming
+            next" badge.
+          </p>
+        </details>
+        <details className="group p-4">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+            How do I know what is new?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-labelledby="title-ac14 desc-ac14"
+            >
+              <title id="title-ac14">Open icon</title>
+              <desc id="desc-ac14">
+                icon that represents the state of the summary
+              </desc>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </summary>
+          <p className="mt-4 text-slate-500">
+            You will always get notified about new components through our
+            discord and other social accounts. You can also see the newest
+            components on the main component page as well as the websites side
+            navigation with a "new" badge next to their name.
+          </p>
+        </details>
+        <details className="group p-4">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+            How do I know what is updated?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-labelledby="title-ac15 desc-ac15"
+            >
+              <title id="title-ac15">Open icon</title>
+              <desc id="desc-ac15">
+                icon that represents the state of the summary
+              </desc>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </summary>
+          <p className="mt-4 text-slate-500">
+            All updated components will be accompanied by an "updated" badge.
+            YOu will be able to see that on our main components page as well as
+            our side navigation.
+          </p>
+        </details>
+        <details className="group p-4">
+          <summary className="relative cursor-pointer list-none pr-8 font-medium text-slate-700 transition-colors duration-300 focus-visible:outline-none group-hover:text-slate-900  [&::-webkit-details-marker]:hidden">
+            How will I know about any major releases or news?
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="absolute right-0 top-1 h-4 w-4 shrink-0 stroke-slate-700 transition duration-300 group-open:rotate-45"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-labelledby="title-ac16 desc-ac16"
+            >
+              <title id="title-ac16">Open icon</title>
+              <desc id="desc-ac16">
+                icon that represents the state of the summary
+              </desc>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </summary>
+          <p className="mt-4 text-slate-500">
+            You will get notified by us about any major news or releases through
+            our newsletter and our social accounts.
+          </p>
+        </details>
+      </section>
+
     </div>
+        }
+{/* loading */ }
+{/* <LoadingIcon /> */ }
+      </div >
+  <Footer />
+    </div >
   );
 }
 
