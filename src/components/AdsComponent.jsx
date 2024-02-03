@@ -5,18 +5,18 @@ const AdsComponent = (props) => {
 
 
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     try {
-    //         (window.adsbygoogle = window.adsbygoogle || []).push({});
-    //         setTimeout(() => { const kazi = document.getElementById("google_esf"); if (kazi == null) { alert("Our website is made possible by displaying online advertisements to our visitors\nPlease consider supporting us by whitelisting our website from your adblocker\n\nℹ Remove our site from your adblocker for better experience"); document.write(""); } }, 8000);
-    //     }
+        try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            // setTimeout(() => { const kazi = document.getElementById("google_esf"); if (kazi == null) { alert("Our website is made possible by displaying online advertisements to our visitors\nPlease consider supporting us by whitelisting our website from your adblocker\n\nℹ Remove our site from your adblocker for better experience"); document.write(""); } }, 8000);
+        }
 
-    //     catch (e) {
+        catch (e) {
 
-    //     }
+        }
 
-    // }, []);
+    }, []);
 
 
 
