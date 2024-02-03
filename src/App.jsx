@@ -179,7 +179,7 @@ function App() {
           console.log(objectURL);
           // const a = document.createElement('a');
           // a.href = objectURL;
-          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip : ${owner}_${repo}`;
+          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
           console.log("downloadFileName:", downloadFileName);
           setDownloadLink(objectURL);
           setDownloadFileName(downloadFileName);
@@ -408,24 +408,27 @@ function App() {
                   <p>
                     Thank you for using our service. If you could share our website with your friends, that would be a great help.
                   </p>
-                  <div class="border-3 border-outset border-black text-center w-99 p-5">
-                    <div class="bg-[#4267B2] m-5 p-3 rounded text-centera">
+                  <div class="text-nowrap">
+                    <div class="text-[13px] md:text-[16px] bg-[#4267B2] my-3 p-3 rounded text-center">
                       <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
                     </div>
-                    <div class="bg-[#006AFF] m-5 p-3 rounded text-center">
+                    <div class="text-[13px] md:text-[16px] bg-[#006AFF] my-3 p-3 rounded text-center">
                       <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
                     </div>
-                    <div class="bg-[#075e54] m-5 p-3 rounded text-center">
+                    <div class="text-[13px] md:text-[16px] bg-[#075e54] my-3 p-3 rounded text-center">
                       <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
                     </div>
-                    <div class="bg-[#5865F2] m-5 p-3 rounded text-center">
+                    <div class="text-[13px] md:text-[16px] bg-[#5865F2] my-3 p-3 rounded text-center">
                       <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
                     </div>
-                    <div class="bg-[#0088cc] m-5 p-3 rounded text-center">
+                    <div class="text-[13px] md:text-[16px] bg-[#0088cc] my-3 p-3 rounded text-center">
                       <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
                     </div>
-                    <div class="bg-[#FF0000] m-5 p-3 rounded text-center">
-                      <a href="https://Youtube.com/TechHelpBangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">SUBSCRIBE OUR YouTube CHANNEL</a>
+                    <div align="center">
+
+                      <a href="https://www.youtube.com/c/TechHelpBangladesh?sub_confirmation=1">
+                        <img alt="youtube subscribers" title="Subscribe for more" src="https://custom-icon-badges.demolab.com/youtube/channel/subscribers/UCpnZ8p8i65RDy1zhXajulYw?color=%23E05D44&label=Subscribe%20for%20more&logo=video&logoColor=white&style=for-the-badge&labelColor=CE4630" /></a>
+
                     </div>
                   </div>
                 </div>
