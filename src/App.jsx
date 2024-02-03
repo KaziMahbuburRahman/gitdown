@@ -7,6 +7,7 @@ import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ThemeChanger from './shared/ThemeChanger';
 import ReactDOM from "react-dom"
+import AdsComponent from './components/AdsComponent';
 
 
 
@@ -399,6 +400,8 @@ function App() {
                     </span>
                   </button>
                 </header>
+                <AdsComponent dataAdSlot="8895719029" />
+
                 {/*        <!-- Modal body --> */}
                 <div id="content-3a" className="flex-1 overflow-auto">
                   <p>
@@ -442,6 +445,8 @@ function App() {
             {/* flex item 1 */}
 
             <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
+
+              <AdsComponent dataAdSlot="8895719029" />
 
               <div className='flex-1'>
                 {console.log(data)}
