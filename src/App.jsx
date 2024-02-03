@@ -608,7 +608,7 @@ function App() {
                     </svg>
                     </h2>
                     <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>Multiple Format Support</h2>
-                    <p className='text-left'>GitDown can download both github repository and folders</p>
+                    <p className='text-left'>GitDown will help you to download both github repository and folders in just one click. What you need to do is just copy the Github repository or folder link and paste it on our input field.</p>
                   </div>
                   <div className=" col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
                     <path fillRule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z" clipRule="evenodd" />
@@ -726,7 +726,7 @@ function App() {
                   </svg>
                 </summary>
                 <p className="mt-4 text-slate-500">
-                  Look Github already allowing you to download the repository from their website. But Github doesn’t let you download a single folder from a repository, which might be necessary when you just need a few files from a large repository. That's why we made this tool to help you download the folder from Github.
+                  Look Github already allowing you to download the repository from their website. You could also download the folder files one by one from Github. But it would cost lots of time and effort. That's why we made this tool to help you to download the folder from Github in just one click.
                   <br /> <br />
                   So, it's completely legal to download the folder from Github using GitDown.
                 </p>
