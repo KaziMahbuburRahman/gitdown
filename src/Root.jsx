@@ -11,12 +11,20 @@ import "./App.css";
 import Preloader from './Preloader.jsx';
 import App from './App.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import AdsComponent from './components/AdsComponent.jsx';
+import { NavbarComponent } from './NavbarComponent.jsx';
 
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App />,
+        path: "/gitdown/",
+        element:
+            <>
+                <NavbarComponent />
+                <AdsComponent dataAdSlot="8895719029" />
+                <App />
+
+            </>,
     },
 
     // {
@@ -32,8 +40,12 @@ const router = createBrowserRouter([
     //     element: <SavedCodeEditor />
     // },
     {
-        path: "/contact",
-        element: <Contact />
+        path: "/gitdown/contact",
+        element:
+            <>
+                <NavbarComponent />
+                <Contact />
+            </>
     }
 ]);
 

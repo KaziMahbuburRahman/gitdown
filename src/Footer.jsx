@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import Logo from './img/GitDown-brain.png'
 // import BackToUp from '@uiw/react-back-to-top';
 const Footer = () => {
@@ -46,7 +46,7 @@ const Footer = () => {
                     <a className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" href='https://techhelpbd.com/about-us' target='_blank' rel='noopener noreferrer'>About Us</a>
                   </li>
                   <li className="mb-2 leading-6">
-                    <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/contact">Contact Us</Link>
+                    <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/gitdown/contact">Contact Us</Link>
                   </li>
 
                   <li className="mb-2 leading-6">
