@@ -23,7 +23,7 @@ const AdsComponent = (props) => {
     return (
 
         <>
-            <center className='bg-slate-300'>
+            <center className='py-6'>
                 <ins className="adsbygoogle"
                     style={{ display: "block" }}
                     data-ad-client="ca-pub-8519930898536160"
