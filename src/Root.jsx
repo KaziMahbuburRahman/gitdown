@@ -21,7 +21,6 @@ const router = createBrowserRouter([
         element:
             <>
                 <NavbarComponent />
-                <AdsComponent dataAdSlot="8895719029" />
                 <App />
 
             </>,
