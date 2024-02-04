@@ -23,7 +23,7 @@ function App() {
   const [urlInput, setUrlInput] = useState('');
 
 
-
+  console.log("REACT_APP_BASE_API_URL:", import.meta.env.VITE_BASE_API)
   // useEffect(() => {
   //   // Call thumbImg when the component mounts
   //   thumbImg(window.owner, window.repo);
@@ -65,13 +65,28 @@ function App() {
       if (!folder) {
         setWarning(true)
       }
+      // https://gitdown-api.vercel.app/results?owner=noobmahbub&repo=noobmahbub&folder=Certificates
 
-      const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${folder || ''}`;
+      const githubAPI = `${import.meta.env.VITE_BASE_API}/results?owner=${owner}&repo=${repo}&folder=${folder || ''}`;
 
+
+      // const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${folder || ''}`;
+      console.log("githubAPI:", githubAPI);
+      console.log("Auth Key:", import.meta.env.VITE_AUTH_KEY);
       // Fetch data from the GitHub API
-      fetch(githubAPI)
+      fetch(githubAPI, {
+
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          authorization: `${import.meta.env.VITE_AUTH_KEY}`
+        },
+
+      })
         .then(response => response.json())
         .then(data => {
+          console.log("Data:", data);
           setData(data);
           // Filter out only files from the data
           //will uncomment later
