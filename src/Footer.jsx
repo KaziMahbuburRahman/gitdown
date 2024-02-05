@@ -1,10 +1,13 @@
+import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import Logo from './img/GitDown-brain.png'
-// import BackToUp from '@uiw/react-back-to-top';
+import BackToUp from '@uiw/react-back-to-top';
 const Footer = () => {
   return (
     <>
+    <BackToUp>Top</BackToUp>
       <footer className="w-full text-gray-200">
+
         {/*    <!-- Main footer --> */}
         <div className="pt-16 pb-12 text-sm border-t border-gray-600 bg-[#3d4451]">
           <div className="container px-6 mx-auto">
