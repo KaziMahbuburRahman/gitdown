@@ -675,7 +675,6 @@ function App() {
             <section className='my-10'>
               <h2 className='mb-5 text-center text-gray-700 text-3xl font-bold'>The Best Github Downloader</h2>
               <p className='text-center'>So, what are you waiting for? Give GitDown Github Folder Downloader a try today and experience the ultimate in Folder downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
-                Upvote us on producthunt to make us No 1
               </p>
             </section>
 
