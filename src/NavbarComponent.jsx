@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom'
 import HomeIcon from './icons/HomeIcon';
 
 
@@ -11,40 +11,12 @@ export const NavbarComponent = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-
-  // const NavMenus = (
-  //   <>
-  //     <li className='border-none lg:mr-6 py-2 lg:py-0'>
-  //       <NavLink onClick={handleScrollToTop} to="/" className={({ isActive }) =>
-  //         isActive ? "text-white btn btn-primary" : "btn glass text-black"
-  //       }>
-  //         <span className='hidden lg:block'>
-  //           <HomeIcon />
-  //         </span>
-  //         <span className='lg:hidden block'>
-  //           Home
-  //         </span>
-  //       </NavLink>
-  //     </li>
-
-
-  //     <li className='py-2 lg:py-0 lg:mr-6'>
-  //       <a href='https://techhelpbd.com' target='blank' className="btn glass text-black">Blog</a>
-  //     </li>
-
-  //     <li className='py-2 lg:py-0'>
-  //       <NavLink to="/contact" className={({ isActive }) =>
-  //         isActive ? "text-white btn btn-primary" : "btn glass text-black"
-  //       }>Feedback</NavLink>
-  //     </li>
-  //     {/* <li className='lg:hidden py-2 lg:py-0'>
-  //       <button to="/bteb/developers" className={({ isActive }) =>
-  //         isActive ? "text-white btn btn-primary" : "btn glass text-black"
-  //       }>Developers</button>
-  //     </li> */}
-  //   </>
-  // )
   const currentPath = useLocation().pathname;
+
+  useEffect(() => {
+    setIsToggleOpen(false);
+  }, [currentPath]);
+
   return (
     <>
       <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
@@ -111,7 +83,6 @@ export const NavbarComponent = () => {
                       }
                       role="menuitem"
                       aria-haspopup="false"
-                      href="javascript:void(0)"
                     >
                       <span className='hidden lg:block'>
                         <HomeIcon />
@@ -142,7 +113,6 @@ export const NavbarComponent = () => {
                         isActive ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
                       }
 
-                      href="javascript:void(0)"
                     >
                       <span>Feedback</span>
                     </NavLink>
