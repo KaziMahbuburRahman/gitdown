@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import HomeIcon from './icons/HomeIcon';
-import SettingsIcon from './icons/SettingsIcon';
 
-// import ThemeChanger from '../shared/ThemeChanger/ThemeChanger';
-// import SettingsIcon from '../assets/svg/SettingsIcon'
-// import HomeIcon from '../assets/svg/HomeIcon';
+
 
 export const NavbarComponent = () => {
 
@@ -50,7 +47,7 @@ export const NavbarComponent = () => {
   const currentPath = useLocation().pathname;
   return (
     <>
-      <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white/90 shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
+      <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
         <div className="relative mx-auto max-w-full px-6">
           <nav
             aria-label="main navigation"
@@ -108,10 +105,10 @@ export const NavbarComponent = () => {
                     }`}
                 >
                   <li role="none" className="flex items-stretch">
-                    <NavLink onClick={handleScrollToTop} to="/gitdown" 
-                    className={
-                      currentPath === '/gitdown' || currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
-                    }
+                    <NavLink onClick={handleScrollToTop} to="/gitdown"
+                      className={
+                        currentPath === '/gitdown' || currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
+                      }
                       role="menuitem"
                       aria-haspopup="false"
                       href="javascript:void(0)"
