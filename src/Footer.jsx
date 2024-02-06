@@ -53,7 +53,7 @@ const Footer = () => {
 
                   <li className="mb-2 leading-6">
                     <a
-                      href="#"
+                      href="https://techhelpbd.com"
                       className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50"
                     >
                       Blog
