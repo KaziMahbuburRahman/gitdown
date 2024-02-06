@@ -232,7 +232,7 @@ function App() {
 
   return (
     <div className='lg:pt-5'>
-      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg: p-5 mb-5'>
+      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none p-5 lg:mb-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
@@ -455,7 +455,7 @@ function App() {
         {
           sizeMB ? (<div>
             {/* flex item 1 */}
-            <AdsComponent dataAdSlot="8895719029" />
+
             <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
 
 
@@ -603,7 +603,7 @@ function App() {
               </div>
             </div>
 
-
+            <AdsComponent dataAdSlot="8895719029" />
 
           </div>) : <div>
             <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>Free Online Github Folder Downloader</h2>
