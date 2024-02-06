@@ -242,7 +242,7 @@ function App() {
 
               onChange={(e) => setUrlInput((e.target.value))}
               value={urlInput}
-              className='w-full mr-auto mb-5 sm:mr-5 p-5 rounded-md border-2 border-blue-950' type="url" onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
+              className='w-full mr-auto mb-5 sm:mr-5 p-5 rounded-md border-2 border-blue-950' onPaste={handlePaste} name="urlInput" placeholder="Enter GitHub URL" />
 
 
             {
@@ -552,11 +552,13 @@ function App() {
 
                   {/*  <!-- Image --> */}
                   <figure>
-                    <img
+                    {
+                      owner && repo ? <img
                       src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
                       alt="card image"
                       className="w-auto overflow-hidden"
-                    />
+                    /> : <p>No image available</p>
+                    }
                   </figure>
                   {/*  <!-- Body--> */}
                   <div className="p-6 mt-5">
@@ -571,7 +573,7 @@ function App() {
                         <DownloadIcon />
                       </span>
                     </button>
-                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                    <button onClick={() => { navigator.clipboard.writeText(`https://F/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
