@@ -1,11 +1,7 @@
 import { useRef, useState } from 'react'
 import './Contact.css'
 import emailjs from '@emailjs/browser';
-import { NavbarComponent } from '../../NavbarComponent';
-import Footer from '../../Footer';
-import ThemeChanger from '../../shared/ThemeChanger';
-// import ThemeChanger from '../../shared/ThemeChanger/ThemeChanger';
-// import { ToastContainer, toast } from 'react-toastify';
+
 
 const Contact = () => {
     const [successMessage, setSuccessMessage] = useState(false);
@@ -15,11 +11,11 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
         emailjs.sendForm('service_w2rs66a', 'template_ku5pa29', form.current, 'DpIxhGCf5pshat00K')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+        // .then((result) => {
+        //     // console.log(result.text);
+        // }, (error) => {
+        //     // console.log(error.text);
+        // });
 
         // toast.success("Thanks for your Feedback!", {
         //     position: "top-right",
@@ -37,7 +33,7 @@ const Contact = () => {
 
     return (
         <>
-           
+
 
             {/* 
             <ToastContainer
@@ -151,7 +147,7 @@ const Contact = () => {
 
                 </div>
             </div>
-            <Footer />
+
         </>
     )
 }

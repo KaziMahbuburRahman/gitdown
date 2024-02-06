@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
     createBrowserRouter,
@@ -11,8 +10,8 @@ import "./App.css";
 import Preloader from './Preloader.jsx';
 import App from './App.jsx';
 import Contact from './components/Contact/Contact.jsx';
-import AdsComponent from './components/AdsComponent.jsx';
 import { NavbarComponent } from './NavbarComponent.jsx';
+import Footer from './Footer.jsx';
 
 
 const router = createBrowserRouter([
@@ -22,6 +21,7 @@ const router = createBrowserRouter([
             <>
                 <NavbarComponent />
                 <App />
+                <Footer />
 
             </>,
     },
@@ -44,6 +44,7 @@ const router = createBrowserRouter([
             <>
                 <NavbarComponent />
                 <Contact />
+                <Footer />
             </>
     }
 ]);

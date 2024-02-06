@@ -1,11 +1,8 @@
 import JSZip from 'jszip';
-import { NavbarComponent } from './NavbarComponent';
 import LoadingIcon from './icons/LoadingIcon';
-import { useEffect, useState } from 'react';
-import Footer from './Footer';
+import { useState } from 'react';
 import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
-import ThemeChanger from './shared/ThemeChanger';
 import ReactDOM from "react-dom"
 import AdsComponent from './components/AdsComponent';
 
@@ -23,7 +20,7 @@ function App() {
   const [urlInput, setUrlInput] = useState('');
 
 
-  console.log("REACT_APP_BASE_API_URL:", import.meta.env.VITE_BASE_API)
+  // console.log("REACT_APP_BASE_API_URL:", import.meta.env.VITE_BASE_API)
   // useEffect(() => {
   //   // Call thumbImg when the component mounts
   //   thumbImg(window.owner, window.repo);
@@ -37,7 +34,7 @@ function App() {
   // };
 
   const downRepo = (url) => {
-    console.log("url from downrepo:", url);
+    // console.log("url from downrepo:", url);
     // console.log('URL:', url);
     // Access the input field value using useRef
 
@@ -71,8 +68,8 @@ function App() {
 
 
       // const githubAPI = `https://api.github.com/repos/${owner}/${repo}/contents/${folder || ''}`;
-      console.log("githubAPI:", githubAPI);
-      console.log("Auth Key:", import.meta.env.VITE_AUTH_KEY);
+      // console.log("githubAPI:", githubAPI);
+      // console.log("Auth Key:", import.meta.env.VITE_AUTH_KEY);
       // Fetch data from the GitHub API
       fetch(githubAPI, {
 
@@ -86,7 +83,7 @@ function App() {
       })
         .then(response => response.json())
         .then(data => {
-          console.log("Data:", data);
+          // console.log("Data:", data);
           setData(data);
           // Filter out only files from the data
           //will uncomment later
@@ -113,7 +110,7 @@ function App() {
     setsizeMB('');
     setLoading(true);
     // Handle paste event
-    console.log('Pasted:', event.clipboardData.getData('text'));
+    // console.log('Pasted:', event.clipboardData.getData('text'));
     const url = event.clipboardData.getData('text')
     // console.log("pastedtext", pastedText);
     // Remove extra spaces from the pasted text
@@ -165,7 +162,7 @@ function App() {
       zip.generateAsync({ type: 'blob' })
         .then(content => {
           const sizeBytes = content.size;
-          console.log(sizeBytes);
+          // console.log(sizeBytes);
           const objectURL = URL.createObjectURL(content);
           let sizeDisplay, sizeUnit;
 
@@ -191,8 +188,8 @@ function App() {
           }
 
           setsizeMB(`${sizeDisplay} ${sizeUnit}`);
-          console.log(sizeMB);
-          console.log(objectURL);
+          // console.log(sizeMB);
+          // console.log(objectURL);
           // const a = document.createElement('a');
           // a.href = objectURL;
           let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
@@ -234,8 +231,8 @@ function App() {
 
 
   return (
-    <div className='bg-slate-300 lg:pt-5'>
-      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg:mb-5 p-5'>
+    <div className='lg:pt-5'>
+      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg:p-5 mb-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
@@ -464,7 +461,7 @@ function App() {
 
 
               <div className='flex-1'>
-                {console.log(data)}
+                {/* {console.log(data)} */}
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data?.length} Files</p>
                 <ul className="space-y-3">
                   {data?.map((item) => (
@@ -483,8 +480,8 @@ function App() {
                     const a = document.createElement('a');
                     a.href = downloadLink;
                     a.download = downloadFileName;
-                    console.log(downloadLink)
-                    console.log(downloadFileName)
+                    // console.log(downloadLink)
+                    // console.log(downloadFileName)
                     document.body.appendChild(a);
                     a.click();
                     //delay
@@ -837,7 +834,7 @@ function App() {
         {/* loading */}
         {/* <LoadingIcon /> */}
       </div >
-      <Footer />
+
     </div >
   );
 }
