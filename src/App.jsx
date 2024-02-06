@@ -254,7 +254,7 @@ function App() {
 
                 }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
                 </svg>
               </span> : sizeMB || error ?
@@ -419,21 +419,21 @@ function App() {
                   <p>
                     Thank you for using our service. If you could share our website with your friends, that would be a great help.
                   </p>
-                  <div class="text-nowrap">
-                    <div class="text-[13px] md:text-[16px] bg-[#4267B2] my-3 p-3 rounded text-center">
-                      <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
+                  <div className="text-nowrap">
+                    <div className="text-[13px] md:text-[16px] bg-[#4267B2] my-3 p-3 rounded text-center">
+                      <a href="https://facebook.com/TechHelpBD" target="_blank" rel="noopener noreferrer" className="text-white font-bold no-underline">LIKE US ON FACEBOOK</a>
                     </div>
-                    <div class="text-[13px] md:text-[16px] bg-[#006AFF] my-3 p-3 rounded text-center">
-                      <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
+                    <div className="text-[13px] md:text-[16px] bg-[#006AFF] my-3 p-3 rounded text-center">
+                      <a href="https://www.facebook.com/groups/techhelpbangladesh" target="_blank" rel="noopener noreferrer" className="text-white font-bold no-underline">JOIN OUR FACEBOOK GROUP</a>
                     </div>
-                    <div class="text-[13px] md:text-[16px] bg-[#075e54] my-3 p-3 rounded text-center">
-                      <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
+                    <div className="text-[13px] md:text-[16px] bg-[#075e54] my-3 p-3 rounded text-center">
+                      <a href="https://chat.whatsapp.com/KsnXhnqsG9g3lxXE6nMheE" target="_blank" rel="noopener noreferrer" className="text-white font-bold no-underline">JOIN OUR WHATSAPP GROUP</a>
                     </div>
-                    <div class="text-[13px] md:text-[16px] bg-[#5865F2] my-3 p-3 rounded text-center">
-                      <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
+                    <div className="text-[13px] md:text-[16px] bg-[#5865F2] my-3 p-3 rounded text-center">
+                      <a href="https://discord.gg/Gb3wqdsRyp" target="_blank" rel="noopener noreferrer" className="text-white font-bold no-underline">JOIN OUR DISCORD SERVER</a>
                     </div>
-                    <div class="text-[13px] md:text-[16px] bg-[#0088cc] my-3 p-3 rounded text-center">
-                      <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" class="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
+                    <div className="text-[13px] md:text-[16px] bg-[#0088cc] my-3 p-3 rounded text-center">
+                      <a href="http://t.me/techhelpbangladesh" target="_blank" rel="noopener noreferrer" className="text-white font-bold no-underline">JOIN OUR TELEGRAM GROUP</a>
                     </div>
                     <div align="center">
 
@@ -679,23 +679,23 @@ function App() {
               <h2 className='mb-5 text-center text-gray-700 text-3xl font-bold'>How to Download Github Folders</h2>
               <div className='flex justify-center items-center'>
 
-                <ul class="list-none flex max-w-[23rem] md:max-w-full flex-col md:flex-row justify-center items-center">
+                <ul className="list-none flex max-w-[23rem] md:max-w-full flex-col md:flex-row justify-center items-center">
                   <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
-                    <li class="flex items-start flex-1">
-                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2 mb-2">1</span>
+                    <li className="flex items-start flex-1">
+                      <span className="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-blue-200 text-blue-500 mr-2 mb-2">1</span>
 
                     </li>
                     <li><span>Simply Enter your desired Github folder link</span></li>
                   </div>
                   <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
-                    <li class="flex items-start flex-1">
-                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-red-200 text-red-500 mr-2 mb-2">2</span>
+                    <li className="flex items-start flex-1">
+                      <span className="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-red-200 text-red-500 mr-2 mb-2">2</span>
                     </li>
                     <li><span>Wait briefly for the zip conversion to finish</span></li>
                   </div>
                   <div className='flex max-w-[26rem] flex-1 justify-center items-center'>
-                    <li class="flex items-start flex-1">
-                      <span class="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-green-200 text-green-500 mr-2 mb-2">3</span>
+                    <li className="flex items-start flex-1">
+                      <span className="number flex items-center justify-center font-bold text-4xl w-16 h-16 rounded-full bg-green-200 text-green-500 mr-2 mb-2">3</span>
                     </li>
                     <li>
                       <span>Then click on download button to save the zip file on your device</span>
