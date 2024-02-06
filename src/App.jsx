@@ -232,7 +232,7 @@ function App() {
 
   return (
     <div className='lg:pt-5'>
-      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg:p-5 mb-5'>
+      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none lg: p-5 mb-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
