@@ -16,7 +16,7 @@ const Footer = () => {
                 aria-labelledby="footer-header"
               >
 
-                <img className='mx-auto h-32 w-32 mb-5' src="../src/img/GitDown-brain.png" alt="gitdown-logo" />
+                <img className='mx-auto h-32 w-32 mb-5' src="favicon.ico" alt="gitdown-logo" />
                 <p className='max-w-[26rem]'>
                   GitDown is a Github Folder Downloader powered by Tech Help BD! <br /> <br />
                   We are excited to provide you with a user-friendly online platform to download your code. GitDown can download any github repository or folder. <br />
