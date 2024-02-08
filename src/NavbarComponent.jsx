@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import HomeIcon from './icons/HomeIcon';
 
 
@@ -69,8 +69,8 @@ export const NavbarComponent = () => {
               {/*      <!-- Brand logo --> */}
               <div>
                 <button>
-                  <NavLink to="/gitdown/" onClick={handleScrollToTop} className={({ isActive }) =>
-                    isActive ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</NavLink>
+                  <Link to="/gitdown/" onClick={handleScrollToTop} className={
+                    currentPath === '/gitdown/' ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-300 active:scale-90"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
                 </button>
               </div>
               {/*      <!-- Navigation links --> */}
@@ -84,9 +84,9 @@ export const NavbarComponent = () => {
                     }`}
                 >
                   <li role="none" className="flex items-stretch">
-                    <NavLink onClick={handleScrollToTop} to="/gitdown/"
+                    <Link onClick={handleScrollToTop} to="/gitdown/"
                       className={
-                        currentPath === '/gitdown' || currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
+                        currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-300 active:scale-90 hover:shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
                       }
                       role="menuitem"
                       aria-haspopup="false"
@@ -97,7 +97,7 @@ export const NavbarComponent = () => {
                       <span className='lg:hidden block'>
                         Home
                       </span>
-                    </NavLink>
+                    </Link>
                   </li>
                   <li role="none" className="flex items-stretch">
                     <a
@@ -106,23 +106,23 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-current="page"
                       aria-haspopup="false"
-                      className="flex items-center gap-2 py-4 transition duration-200 active:scale-90"
+                      className="flex items-center gap-2 py-4 transition duration-300 active:scale-90"
 
                     >
                       <span>Blog</span>
                     </a>
                   </li>
                   <li role="none" className="flex items-stretch">
-                    <NavLink to="/gitdown/contact"
+                    <Link to="/gitdown/contact"
                       role="menuitem"
                       aria-haspopup="false"
-                      className={({ isActive }) =>
-                        isActive ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
+                      className={
+                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-sky-500 flex items-center gap-2 py-4 my-2 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1" : "flex items-center lg:px-8 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
                       }
 
                     >
                       <span>Feedback</span>
-                    </NavLink>
+                    </Link>
                   </li>
 
                 </ul>
