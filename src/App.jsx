@@ -123,6 +123,8 @@ function App() {
 
   const handleButtonClick = async (e) => {
     e.preventDefault()
+    setData('');
+    setsizeMB('');
     setLoading(true);
     const url = e.target.elements.urlInput.value;
     downRepo(url)
@@ -209,7 +211,7 @@ function App() {
 
   const downloadImage = async () => {
     const imageUrl = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
-
+    
     try {
       const response = await fetch(imageUrl);
       const blob = await response.blob();
