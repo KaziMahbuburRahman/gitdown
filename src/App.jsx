@@ -19,6 +19,11 @@ function App() {
   const [warning, setWarning] = useState(false);
   const [urlInput, setUrlInput] = useState('');
 
+  const [isImagePreloaded, setIsImagePreloaded] = useState(false);
+
+
+
+
 
   // console.log("REACT_APP_BASE_API_URL:", import.meta.env.VITE_BASE_API)
   // useEffect(() => {
@@ -52,6 +57,13 @@ function App() {
       // console.log("Repo:", repo);
       // console.log("Branch:", branch);
       // console.log("Folder:", folder); 
+      
+      const image = new Image();
+      image.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
+      image.onload = () => {
+        setIsImagePreloaded(true);
+      };
+      
       window.owner = owner;
       window.repo = repo;
       // setOwner(owner);
@@ -104,6 +116,10 @@ function App() {
       return;
     }
   }
+
+
+  // };
+
 
   const handlePaste = (event) => {
     setData('');
@@ -195,7 +211,7 @@ function App() {
           // const a = document.createElement('a');
           // a.href = objectURL;
           let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
-          console.log("downloadFileName:", downloadFileName);
+          // console.log("downloadFileName:", downloadFileName);
           setDownloadLink(objectURL);
           setDownloadFileName(downloadFileName);
           // setFileName(`${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`);
@@ -211,7 +227,7 @@ function App() {
 
   const downloadImage = async () => {
     const imageUrl = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
-    
+
     try {
       const response = await fetch(imageUrl);
       const blob = await response.blob();
@@ -466,8 +482,8 @@ function App() {
                 {/* {console.log(data)} */}
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data?.length} Files</p>
                 <ul className="space-y-3">
-                  {data?.map((item) => (
-                    <li className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
+                  {data?.map((item,index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
 
                   ))}
 
@@ -519,28 +535,7 @@ function App() {
 
 
 
-                {/* <button
-                  onClick={() => {
 
-                    const a = document.createElement('a');
-                    a.href = downloadLink;
-                    a.download = downloadFileName;
-                    console.log(downloadLink)
-                    console.log(downloadFileName)
-                    document.body.appendChild(a);
-                    a.click();
-                    //delay
-                    setTimeout(() => {
-                      document.getElementById('my-modal-3').checked = true;
-                    }, 400);
-                    // document.getElementById('my-modal-3').checked = true;
-                    // URL.revokeObjectURL(downloadLink);
-                  }}
-                  style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
-                  className="text-xl px-10 py-5 text-center align-middle m-0-auto bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
-                >
-                  Download
-                </button> */}
 
               </div>
 
@@ -555,11 +550,11 @@ function App() {
                   {/*  <!-- Image --> */}
                   <figure>
                     {
-                      owner && repo ? <img
-                      src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
-                      alt="card image"
-                      className="w-auto overflow-hidden"
-                    /> : <p>No image available</p>
+                      isImagePreloaded ? <img
+                        src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
+                        alt="card image"
+                        className="w-auto overflow-hidden"
+                      /> : <p>No image available</p>
                     }
                   </figure>
                   {/*  <!-- Body--> */}
