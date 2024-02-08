@@ -69,7 +69,7 @@ export const NavbarComponent = () => {
               {/*      <!-- Brand logo --> */}
               <div>
                 <button>
-                  <NavLink to="/gitdown" onClick={handleScrollToTop} className={({ isActive }) =>
+                  <NavLink to="/gitdown/" onClick={handleScrollToTop} className={({ isActive }) =>
                     isActive ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-200 active:scale-90"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</NavLink>
                 </button>
               </div>
@@ -84,7 +84,7 @@ export const NavbarComponent = () => {
                     }`}
                 >
                   <li role="none" className="flex items-stretch">
-                    <NavLink onClick={handleScrollToTop} to="/gitdown"
+                    <NavLink onClick={handleScrollToTop} to="/gitdown/"
                       className={
                         currentPath === '/gitdown' || currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-200 active:scale-90"
                       }
