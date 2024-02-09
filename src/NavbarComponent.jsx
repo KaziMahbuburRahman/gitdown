@@ -26,7 +26,7 @@ export const NavbarComponent = () => {
 
   return (
     <>
-      <header className="border-b-1 relative z-20 w-full border-b border-slate-200 bg-white shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
+      <header className="mb-5 border-b-1 relative z-20 w-full border-b border-slate-200 bg-white shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200 lg:border-slate-200 lg:backdrop-blur-sm lg:after:hidden">
         <div className="relative mx-auto max-w-full px-6">
           <nav
             aria-label="main navigation"
@@ -70,7 +70,7 @@ export const NavbarComponent = () => {
               <div>
                 <button>
                   <Link to="/gitdown/" onClick={handleScrollToTop} className={
-                    currentPath === '/gitdown/' ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-300 active:scale-90"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
+                    currentPath === '/gitdown/' ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none hover:bg-gray-100/100 p-4 rounded-md" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-300 active:scale-90 hover:bg-gray-100/100 p-4 rounded-md"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
                 </button>
               </div>
               {/*      <!-- Navigation links --> */}
@@ -86,7 +86,7 @@ export const NavbarComponent = () => {
                   <li role="none" className="flex items-stretch">
                     <Link onClick={handleScrollToTop} to="/gitdown/"
                       className={
-                        currentPath === '/gitdown/' ? "text-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8" : "flex items-center gap-2 py-4 lg:px-8 transition duration-300 active:scale-90 hover:shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
+                        currentPath === '/gitdown/' ? "text-white bg-sky-500 flex items-center gap-2 py-1 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-5 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1" : "flex items-center gap-2 py-1 lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
                       }
                       role="menuitem"
                       aria-haspopup="false"
@@ -106,7 +106,7 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-current="page"
                       aria-haspopup="false"
-                      className="flex items-center gap-2 py-4 transition duration-300 active:scale-90"
+                      className="flex items-center gap-2 py-4 lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
 
                     >
                       <span>Blog</span>
@@ -117,7 +117,7 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-haspopup="false"
                       className={
-                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-sky-500 flex items-center gap-2 py-4 my-2 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-8 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1" : "flex items-center lg:px-8 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
+                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-white bg-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-5 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1 drop-shadow-2xl" : "flex items-center lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1 drop-shadow-2xl"
                       }
 
                     >
