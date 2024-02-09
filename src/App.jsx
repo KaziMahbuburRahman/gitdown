@@ -602,7 +602,7 @@ function App() {
               </div>
             </div>
 
-            <AdsComponent dataAdSlot="8895719029" />
+
 
           </div>) : <div>
             <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>Free Online Github Folder Downloader</h2>
