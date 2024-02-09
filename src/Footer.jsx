@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <BackToUp>Top</BackToUp>
-      <footer className="w-full text-gray-200">
+      <footer className="w-full mt-5 text-gray-200">
 
         {/*    <!-- Main footer --> */}
         <div className="pt-16 pb-12 text-sm border-t border-gray-600 bg-[#3d4451]">
