@@ -57,13 +57,13 @@ function App() {
       // console.log("Repo:", repo);
       // console.log("Branch:", branch);
       // console.log("Folder:", folder); 
-      
+
       const image = new Image();
       image.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
       image.onload = () => {
         setIsImagePreloaded(true);
       };
-      
+
       window.owner = owner;
       window.repo = repo;
       // setOwner(owner);
@@ -249,8 +249,8 @@ function App() {
 
 
   return (
-    <div className='lg:pt-5'>
-      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-none p-5 lg:mb-5'>
+    <div className='mx-3'>
+      <div className='container m-0 bg-white min-h-screen max-w-[960px] mx-auto lg:rounded-md rounded-md p-5 lg:mb-5'>
         {/* Input field for the URL */}
         <h2 className='text-3xl text-center font-bold text-gray-700'>Github Folder Downloader</h2>
         <p className='text-center mt-5'>Download github repository and folders for free!</p>
@@ -382,7 +382,7 @@ function App() {
         {isShowing && typeof document !== "undefined"
           ? ReactDOM.createPortal(
             <div
-              className="fixed top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-slate-300/20 backdrop-blur-sm"
+              className="fixed top-0 left-0 z-20 flex h-screen w-screen items-center justify-center bg-slate-300/20"
               aria-labelledby="header-3a content-3a"
               aria-modal="true"
               tabindex="-1"
@@ -482,7 +482,7 @@ function App() {
                 {/* {console.log(data)} */}
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data?.length} Files</p>
                 <ul className="space-y-3">
-                  {data?.map((item,index) => (
+                  {data?.map((item, index) => (
                     <li key={index} className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
 
                   ))}
