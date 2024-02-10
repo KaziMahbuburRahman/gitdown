@@ -86,7 +86,11 @@ export const NavbarComponent = () => {
                   <li role="none" className="flex items-stretch">
                     <Link onClick={handleScrollToTop} to="/gitdown/"
                       className={
-                        currentPath === '/gitdown/' ? "text-white bg-sky-500 flex items-center gap-2 py-1 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-5 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1" : "flex items-center gap-2 py-1 lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
+                        currentPath === '/gitdown/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 lg:px-3 lg:py-2 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:shadow-2xl lg: rounded-lg lg:mx-5 my-1"
+
+                          :
+
+                          "flex items-center gap-2 lg:px-3 lg:py-1 py-4 transition duration-300 active:scale-90 lg:shadow-2xl  rounded-lg lg:mx-5 my-1"
                       }
                       role="menuitem"
                       aria-haspopup="false"
@@ -106,7 +110,7 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-current="page"
                       aria-haspopup="false"
-                      className="flex items-center gap-2 py-4 lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1"
+                      className="flex items-center gap-2 lg:py-2 lg:px-5 transition duration-300 active:scale-90 shadow-2xl  rounded-lg lg:mx-5 my-1"
 
                     >
                       <span>Blog</span>
@@ -117,7 +121,7 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-haspopup="false"
                       className={
-                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-white bg-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:px-5 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1 drop-shadow-2xl" : "flex items-center lg:px-5 transition duration-300 active:scale-90 shadow-2xl shadow-gray-600 rounded-lg mx-5 my-1 drop-shadow-2xl"
+                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:py-2 lg:px-5 lg:shadow-2xl  lg:rounded-lg lg:mx-5 my-1 drop-shadow-2xl" : "flex items-center py-4 lg:px-5 lg:py-2 transition duration-300 active:scale-90 lg:shadow-2xl  rounded-lg lg:mx-5 my-1 drop-shadow-2xl"
                       }
 
                     >
