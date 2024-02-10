@@ -70,7 +70,9 @@ export const NavbarComponent = () => {
               <div>
                 <button>
                   <Link to="/gitdown/" onClick={handleScrollToTop} className={
-                    currentPath === '/gitdown/' ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none hover:bg-gray-100/100 p-4 rounded-md" : "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-300 active:scale-90 hover:bg-gray-100/100 p-4 rounded-md"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
+                    currentPath === '/gitdown/' ? "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none lg:hover:bg-gray-100/100 p-2 lg:rounded-md"
+                      :
+                      "btn btn-ghost normal-case text-lg flex justify-center items-center gap-2 outline-none bg-transparent border-none transition duration-300 active:scale-90 lg:hover:bg-gray-100/100 p-2 lg:rounded-md"}>TechHelpBD <strong className="text-blue-500">|</strong> GitDown</Link>
                 </button>
               </div>
               {/*      <!-- Navigation links --> */}
@@ -86,11 +88,11 @@ export const NavbarComponent = () => {
                   <li role="none" className="flex items-stretch">
                     <Link onClick={handleScrollToTop} to="/gitdown/"
                       className={
-                        currentPath === '/gitdown/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 lg:px-3 lg:py-2 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:shadow-2xl lg: rounded-lg lg:mx-5 my-1"
+                        currentPath === '/gitdown/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 lg:px-3 lg:py-1 transition-colors duration-300 focus:outline-none focus-visible:outline-none  lg:rounded-lg lg:mx-5 my-1"
 
                           :
 
-                          "flex items-center gap-2 lg:px-3 lg:py-1 py-4 transition duration-300 active:scale-90 lg:shadow-2xl  rounded-lg lg:mx-5 my-1"
+                          "lg:shadow flex items-center gap-2 lg:px-3 lg:py-1 py-4 transition duration-300 active:scale-90 lg:rounded-md lg:mx-5 my-1"
                       }
                       role="menuitem"
                       aria-haspopup="false"
@@ -110,7 +112,7 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-current="page"
                       aria-haspopup="false"
-                      className="flex items-center gap-2 lg:py-2 lg:px-5 transition duration-300 active:scale-90 shadow-2xl  rounded-lg lg:mx-5 my-1"
+                      className="lg:shadow flex items-center gap-2 lg:py-2 lg:px-4 transition duration-300 active:scale-90 lg:rounded-md lg:mx-5 my-1"
 
                     >
                       <span>Blog</span>
@@ -121,7 +123,11 @@ export const NavbarComponent = () => {
                       role="menuitem"
                       aria-haspopup="false"
                       className={
-                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:py-2 lg:px-5 lg:shadow-2xl  lg:rounded-lg lg:mx-5 my-1 drop-shadow-2xl" : "flex items-center py-4 lg:px-5 lg:py-2 transition duration-300 active:scale-90 lg:shadow-2xl  rounded-lg lg:mx-5 my-1 drop-shadow-2xl"
+                        currentPath === '/gitdown/contact' || currentPath === '/gitdown/contact/' ? "text-sky-500 lg:text-white lg:bg-sky-500 flex items-center gap-2 py-4 transition-colors duration-300 focus:outline-none focus-visible:outline-none lg:py-2 lg:px-3   lg:rounded-md lg:mx-5 my-1"
+
+                          :
+
+                          "lg:shadow flex items-center py-4 lg:px-3 lg:py-2 transition duration-300 active:scale-90 lg:rounded-md lg:mx-5 my-1"
                       }
 
                     >
