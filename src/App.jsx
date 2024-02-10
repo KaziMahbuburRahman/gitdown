@@ -606,7 +606,8 @@ function App() {
 
           </div>) : <div>
             <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>Free Online Github Folder Downloader</h2>
-            <p className='text-center mb-10'>Are you tired of struggling to download your favorite Github Folders? Do you want a fast, reliable, and user-friendly solution to enjoy your beloved code offline? Look no further! GitDown Github Folder Downloader is here to revolutionize your Folder downloading experience.
+            <p className='text-left mb-10'>Are you tired of struggling to download your favorite Github Folders? Do you want a fast, reliable, and user-friendly solution to enjoy your beloved code offline? <br />
+              Look no further! GitDown Github Folder Downloader is here to revolutionize your Folder downloading experience.
 
               Discover the seamless experience with GitDown Github Downloader, enabling you to effortlessly download your desired Github Folders in high-quality for convenient offline viewing.</p>
 
@@ -620,7 +621,7 @@ function App() {
                     </svg>
                     </h2>
                     <h2 className='my-2 text-xl font-bold text-gray-700 text-left'>Multiple Format Support</h2>
-                    <p className='text-left'>GitDown will help you to download both github repository and folders in just one click. What you need to do is just copy the Github repository or folder link and paste it on our input field.</p>
+                    <p className='text-left'>GitDown will help you to download both github repository and folders in just one click. <br />What you need to do is just copy the Github repository or folder link and paste it on our input field.</p>
                   </div>
                   <div className=" col-span-4"><h2 className='mr-5 sm:mr-20 lg:mr-10 flex flex-col justify-center items-center text-xl font-bold'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-12 w-12 text-orange-600">
                     <path fillRule="evenodd" d="M7.502 6h7.128A3.375 3.375 0 0 1 18 9.375v9.375a3 3 0 0 0 3-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 0 0-.673-.05A3 3 0 0 0 15 1.5h-1.5a3 3 0 0 0-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6ZM13.5 3A1.5 1.5 0 0 0 12 4.5h4.5A1.5 1.5 0 0 0 15 3h-1.5Z" clipRule="evenodd" />
@@ -670,7 +671,7 @@ function App() {
 
             <section className='my-10'>
               <h2 className='mb-5 text-center text-gray-700 text-3xl font-bold'>The Best Github Downloader</h2>
-              <p className='text-center'>So, what are you waiting for? Give GitDown Github Folder Downloader a try today and experience the ultimate in Folder downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
+              <p className='text-left'>So, what are you waiting for? Give GitDown Github Folder Downloader a try today and experience the ultimate in Folder downloading convenience and versatility. We are confident that you'll love our platform and never look back. Happy downloading!
               </p>
             </section>
 
