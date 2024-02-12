@@ -1,6 +1,6 @@
 import JSZip from 'jszip';
 import LoadingIcon from './icons/LoadingIcon';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ReactDOM from "react-dom"
@@ -20,10 +20,15 @@ function App() {
   const [urlInput, setUrlInput] = useState('');
 
   const [isImagePreloaded, setIsImagePreloaded] = useState(false);
+  const [downloads, setDownloads] = useState([]);
 
 
+  useEffect(() => {
+    const storedDownloads = JSON.parse(localStorage.getItem('downloads')) || [];
+    setDownloads(storedDownloads.slice(-3));
 
-
+  }, [])
+  console.log(downloads)
 
   // console.log("REACT_APP_BASE_API_URL:", import.meta.env.VITE_BASE_API)
   // useEffect(() => {
@@ -293,6 +298,9 @@ function App() {
 
 
         </form>
+
+
+
         {/* warning msg start */}
         {sizeMB && warning && <div
           className="flex w-full items-start gap-4 rounded border border-amber-100 bg-amber-50 px-4 py-3 text-sm text-amber-500"
@@ -506,8 +514,18 @@ function App() {
                     setTimeout(() => {
                       setIsShowing(true)
                     }, 500);
-                    // document.getElementById('my-modal-3').checked = true;
-                    // URL.revokeObjectURL(downloadLink);
+                    const newDownload = {
+                      imageUrl: `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`,
+                      zipUrl: downloadLink,
+                      filename: downloadFileName,
+                      size: sizeMB,
+                      owner: owner,
+                      repo: repo,
+                    };
+
+                    const updatedDownloads = [newDownload, ...downloads];
+                    setDownloads(updatedDownloads);
+                    localStorage.setItem('downloads', JSON.stringify(updatedDownloads));
                   }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90 ">
                     <span className="order-2">Download</span>
                     <span className="relative only:-mx-6">
@@ -570,7 +588,7 @@ function App() {
                         <DownloadIcon />
                       </span>
                     </button>
-                    <button onClick={() => { navigator.clipboard.writeText(`https://F/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -601,9 +619,6 @@ function App() {
                 </div>
               </div>
             </div>
-
-
-
           </div>) : <div>
             <h2 className='text-3xl font-bold text-gray-700 text-center m-5'>Free Online Github Folder Downloader</h2>
             <p className='text-left mb-10'>Are you tired of struggling to download your favorite Github Folders? Do you want a fast, reliable, and user-friendly solution to enjoy your beloved code offline? <br />
@@ -831,6 +846,160 @@ function App() {
 
           </div>
         }
+        <h1 className='text-gray-700 text-3xl font-bold text-center'>Recently Downloaded Folders</h1>
+        {/* start recently downloaded folders */}
+        {
+          downloads.length !== 0 ? (
+            downloads.map((downloadItem, index) => (
+<div key={index}>
+              {/* flex item 1 */}
+
+              <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
+
+
+
+                <div className='flex-1'>
+                  {/* {console.log(data)} */}
+                  <p className="text-sky-900 text-xl font-semibold mb-5">Name: {downloadItem.filename}</p>
+                  <ul className="space-y-3">
+                    {/* {data?.map((item, index) => (
+                      <li key={index} className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
+
+                    ))} */}
+
+
+                  </ul>
+
+                  <h2 className='mt-5 text-xl font-semibold  text-sky-900'>Size: {downloadItem.size}</h2>
+
+                  <div className="mr-8">
+                    <button onClick={() => {
+
+                      const a = document.createElement('a');
+                      a.href = downloadItem.zipUrl;
+                      a.download = downloadItem.filename;
+                      // console.log(downloadLink)
+                      // console.log(downloadFileName)
+                      document.body.appendChild(a);
+                      a.click();
+                      //delay
+                      setTimeout(() => {
+                        setIsShowing(true)
+                      }, 500);
+                      // const newDownload = {
+                      //   imageUrl: `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`,
+                      //   zipUrl: downloadLink,
+                      //   filename: downloadFileName,
+                      //   size: sizeMB
+                      // };
+
+                      // const updatedDownloads = [newDownload, ...downloads];
+                      // setDownloads(updatedDownloads);
+                      // localStorage.setItem('downloads', JSON.stringify(updatedDownloads));
+                    }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90 ">
+                      <span className="order-2">Download</span>
+                      <span className="relative only:-mx-6">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          role="graphics-symbol"
+                          aria-labelledby="title-62 desc-62"
+                        >
+                          <title id="title-62">Icon title</title>
+                          <desc id="desc-62">A more detailed description of the icon</desc>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+
+
+
+
+
+                </div>
+
+
+                <div className='flex-1 pt-2 max-w-full overflow-x-auto'>
+
+                  <div className="min-w-full overflow-hidden rounded bg-white text-slate-500">
+
+
+                    {/*  <!-- Header--> */}
+
+                    {/*  <!-- Image --> */}
+                    <figure>
+                      {
+                        <img
+                          src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${downloadItem.owner}/${downloadItem.repo}`}
+                          alt="card image"
+                          className="w-auto overflow-hidden"
+                        />
+                      }
+                    </figure>
+                    {/*  <!-- Body--> */}
+                    <div className="p-6 mt-5">
+                      <p>
+                        {`${downloadItem.owner}_${downloadItem.repo}_thumbnail.png`}
+                      </p>
+                    </div>
+                    {/*  <!-- Action icon buttons --> */}
+                    <div className="flex justify-end gap-2 p-2 pt-0 mt-2">
+                      <button onClick={downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                        <span className="relative only:-mx-6">
+                          <DownloadIcon />
+                        </span>
+                      </button>
+                      <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${downloadItem.owner}/${downloadItem.repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                        <span className="relative only:-mx-6">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            role="graphics-symbol"
+                            aria-labelledby="title-82 desc-82"
+                          >
+                            <title id="title-82">Share</title>
+                            <desc id="desc-82">
+                              A more detailed description of the icon
+                            </desc>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+
+              {/* <h1 className='text-gray-700 text-3xl font-bold text-center'>Recently Downloaded Folders</h1> */}
+
+
+            </div>))
+          ) : (
+            null
+          )
+        }
+        {/* end recently downloaded folders */}
+
         {/* loading */}
         {/* <LoadingIcon /> */}
       </div >
