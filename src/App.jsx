@@ -14,7 +14,7 @@ function App() {
   const [downloadFileName, setDownloadFileName] = useState('');
   const [sizeMB, setsizeMB] = useState('');
   const [data, setData] = useState('');
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [warning, setWarning] = useState(false);
   const [urlInput, setUrlInput] = useState('');
@@ -41,7 +41,7 @@ function App() {
       const image = new Image();
       image.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
       image.onload = () => {
-        setIsImagePreloaded(true);
+          setIsImagePreloaded(true);
       };
 
       window.owner = owner;
@@ -103,6 +103,7 @@ function App() {
 
   const handlePaste = (event) => {
     setData('');
+    setIsImagePreloaded(false);
     setsizeMB('');
     setLoading(true);
     // Handle paste event
@@ -120,6 +121,7 @@ function App() {
   const handleButtonClick = async (e) => {
     e.preventDefault()
     setData('');
+    setIsImagePreloaded(false);
     setsizeMB('');
     setLoading(true);
     const url = e.target.elements.urlInput.value;
@@ -248,7 +250,7 @@ function App() {
                 className='absolute top-[36px] right-[12px] transform -translate-y-1/2 text-red-500 cursor-pointer'
                 onClick={() => {
                   setUrlInput('')
-                  setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData('')
+                  setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''),setIsImagePreloaded(false)
 
                 }}
               >
@@ -256,7 +258,7 @@ function App() {
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
                 </svg>
               </span> : sizeMB || error ?
-                (setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''))
+                (setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''),setIsImagePreloaded(false))
                 : null
             }
 
@@ -454,7 +456,7 @@ function App() {
 
 
         {
-          isImagePreloaded && sizeMB ? (<div>
+          sizeMB ? (<div>
             {/* flex item 1 */}
 
             <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
@@ -489,7 +491,7 @@ function App() {
                     setTimeout(() => {
                       setIsShowing(true)
                     }, 500);
-                
+
                   }} className="my-5 inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90 ">
                     <span className="order-2">Download</span>
                     <span className="relative only:-mx-6">
@@ -532,11 +534,22 @@ function App() {
                   {/*  <!-- Image --> */}
                   <figure>
                     {
-                      isImagePreloaded && <img
+                      isImagePreloaded ? <img
                         src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
                         alt="card image"
                         className="w-auto overflow-hidden"
-                      /> 
+                      /> : <div className=" p-6 rounded-md bg-white shadow-md mx-auto max-w-fit">
+                        <div className="animate-pulse">
+                          {/* Product Image Skeleton */}
+                          <div className="w-[300px] lg:h-52 md:h-52 h-48 rounded-lg bg-gray-300 mb-6"></div>
+                          {/* Product Title Skeleton */}
+                          <div className="w-[290px] h-4 rounded-lg bg-gray-300 mb-4"></div>
+                          {/* product heading skeleton */}
+                          <div className="w-[220px] h-4 rounded-lg bg-gray-300 mb-4"></div>
+                          {/* Product Description Skeleton */}
+                          <div className="w-[200px] h-4 rounded-lg bg-gray-300 mb-4"></div>
+                        </div>
+                      </div>
                     }
                   </figure>
                   {/*  <!-- Body--> */}
@@ -547,7 +560,7 @@ function App() {
                   </div>
                   {/*  <!-- Action icon buttons --> */}
                   <div className="flex justify-end gap-2 p-2 pt-0 mt-2">
-                    <button onClick={()=>downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                    <button onClick={() => downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <DownloadIcon />
                       </span>
