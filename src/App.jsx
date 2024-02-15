@@ -1,6 +1,6 @@
 import JSZip from 'jszip';
 import LoadingIcon from './icons/LoadingIcon';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ReactDOM from "react-dom"
@@ -14,7 +14,7 @@ function App() {
   const [downloadFileName, setDownloadFileName] = useState('');
   const [sizeMB, setsizeMB] = useState('');
   const [data, setData] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); 
   const [error, setError] = useState(false);
   const [warning, setWarning] = useState(false);
   const [urlInput, setUrlInput] = useState('');
@@ -454,7 +454,7 @@ function App() {
 
 
         {
-          sizeMB ? (<div>
+          isImagePreloaded && sizeMB ? (<div>
             {/* flex item 1 */}
 
             <div className="flex flex-col-reverse sm:flex-row justify-center items-center  min-w-full my-10 shadow-md p-8 rounded-lg border-t border-l border-l-[#005eb6] border-t-[#005eb6] border-b-2 border-r-2 border-b-[#0084ff] border-r-[#0084ff]  space-x-5">
@@ -532,11 +532,11 @@ function App() {
                   {/*  <!-- Image --> */}
                   <figure>
                     {
-                      isImagePreloaded ? <img
+                      isImagePreloaded && <img
                         src={`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`}
                         alt="card image"
                         className="w-auto overflow-hidden"
-                      /> : <p>No image available</p>
+                      /> 
                     }
                   </figure>
                   {/*  <!-- Body--> */}
