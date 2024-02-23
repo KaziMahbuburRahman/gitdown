@@ -560,7 +560,7 @@ function App() {
                   </div>
                   {/*  <!-- Action icon buttons --> */}
                   <div className="flex justify-end gap-2 p-2 pt-0 mt-2">
-                    <button onClick={() => downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                    <button onClick={downloadImage} className="text-sky-500 inline-flex h-10 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
                         <DownloadIcon />
                       </span>
