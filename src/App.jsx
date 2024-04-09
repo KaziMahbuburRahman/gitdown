@@ -41,7 +41,7 @@ function App() {
       const image = new Image();
       image.src = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
       image.onload = () => {
-          setIsImagePreloaded(true);
+        setIsImagePreloaded(true);
       };
 
       window.owner = owner;
@@ -101,18 +101,19 @@ function App() {
   // };
 
 
-  const handlePaste = (event) => {
+  const handlePaste = async(event) => {
     setData('');
     setIsImagePreloaded(false);
     setsizeMB('');
     setLoading(true);
     // Handle paste event
     // console.log('Pasted:', event.clipboardData.getData('text'));
-    const url = event.clipboardData.getData('text')
+    const url = await navigator.clipboard.readText()
     // console.log("pastedtext", pastedText);
     // Remove extra spaces from the pasted text
     // const url = pastedText.trim();
     // console.log(event)
+    setUrlInput(url)
     setTimeout(() => {
       downRepo(url)
     }, 500);
@@ -161,8 +162,11 @@ function App() {
       // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
+          console.log("content", content);
           const sizeBytes = content.size;
-          // console.log(sizeBytes);
+
+          console.log("sizebytes", sizeBytes);
+          // problem is here maybe
           const objectURL = URL.createObjectURL(content);
           let sizeDisplay, sizeUnit;
 
@@ -250,7 +254,7 @@ function App() {
                 className='absolute top-[36px] right-[12px] transform -translate-y-1/2 text-red-500 cursor-pointer'
                 onClick={() => {
                   setUrlInput('')
-                  setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''),setIsImagePreloaded(false)
+                  setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''), setIsImagePreloaded(false)
 
                 }}
               >
@@ -258,22 +262,34 @@ function App() {
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"></path>
                 </svg>
               </span> : sizeMB || error ?
-                (setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''),setIsImagePreloaded(false))
+                (setsizeMB(''), setLoading(false), setError(''), setWarning(''), setDownloadLink(''), setDownloadFileName(''), setData(''), setIsImagePreloaded(false))
                 : null
             }
 
           </div>
 
           {/* Button to trigger the action */}
-          <button
-            type='submit'
-            style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
-            className="w-full mb-5 sm:w-auto text-xl px-10 py-5 text-center align-middle  bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
-          >
-            Download
-          </button>
 
-
+          {
+            urlInput ?
+              <button
+                type='submit'
+                style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+                className="w-full mb-5 sm:w-auto text-xl px-10 py-5 text-center align-middle  bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+                onSubmit={handleButtonClick}
+              >
+                Download
+              </button>
+              :
+              <button
+                type='submit'
+                style={{ boxShadow: '0 5px 15px 5px rgba(34, 125, 199, .42)' }}
+                className="w-full mb-5 sm:w-auto text-xl px-10 py-5 text-center align-middle  bg-sky-600 rounded-xl hover:bg-slate-700 border-0 border-none text-white duration-300 hover:shadow-none focus:outline-none focus:ring-0 focus:border-none active:outline-none active:ring-0 active:border-none shadow-xl transition duration-300 ease-in-out"
+                onClick={handlePaste}
+              >
+                Paste
+              </button>
+          }
         </form>
 
 
@@ -565,27 +581,17 @@ function App() {
                         <DownloadIcon />
                       </span>
                     </button>
-                    <button onClick={() => { navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`) }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
+                    <button onClick={() => {
+                      navigator.clipboard.writeText(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`)
+                      //open in new tab
+                      window.open(`https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`)
+
+                    }} className="inline-flex h-11 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded px-5 text-sm font-medium  text-sky-500 outline-none bg-transparent border-none active:text-blue-500 transition duration-200 active:scale-90">
                       <span className="relative only:-mx-6">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          role="graphics-symbol"
-                          aria-labelledby="title-82 desc-82"
-                        >
-                          <title id="title-82">Share</title>
-                          <desc id="desc-82">
-                            A more detailed description of the icon
-                          </desc>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-                          />
+
+                        <svg className="w-6 h-6" stroke="none" fill='currentColor' xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24">
+                          <title>Open</title>
+                          <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
                         </svg>
                       </span>
                     </button>
