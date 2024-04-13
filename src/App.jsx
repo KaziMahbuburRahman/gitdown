@@ -5,6 +5,8 @@ import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ReactDOM from "react-dom"
 import AdsComponent from './components/AdsComponent';
+import FolderIcon from './icons/FolderIcon';
+import FileIcon from './icons/FileIcon';
 
 
 
@@ -18,18 +20,18 @@ function App() {
   const [error, setError] = useState(false);
   const [warning, setWarning] = useState(false);
   const [urlInput, setUrlInput] = useState('');
-
   const [isImagePreloaded, setIsImagePreloaded] = useState(false);
 
 
 
   const downRepo = (url) => {
-
+    setLoading(true);
     const match = url.replace(/\s/g, '').match(/github\.com\/([^/]+)\/([^/]+)(\/tree\/[^/]+\/(.+))?/);
 
 
     // window.transformedPart = transformedPart;
     if (match) {
+      setUrlInput(url)
       const [fullMatch, owner, repo, branch, folder] = match;
       setWarning(false)
       // console.log("Full Match:", fullMatch);
@@ -101,7 +103,7 @@ function App() {
   // };
 
 
-  const handlePaste = async(event) => {
+  const handlePaste = async () => {
     setData('');
     setIsImagePreloaded(false);
     setsizeMB('');
@@ -113,7 +115,7 @@ function App() {
     // Remove extra spaces from the pasted text
     // const url = pastedText.trim();
     // console.log(event)
-    setUrlInput(url)
+
     setTimeout(() => {
       downRepo(url)
     }, 500);
@@ -162,10 +164,10 @@ function App() {
       // Generate the ZIP file
       zip.generateAsync({ type: 'blob' })
         .then(content => {
-          console.log("content", content);
+          // console.log("content", content);
           const sizeBytes = content.size;
 
-          console.log("sizebytes", sizeBytes);
+          // console.log("sizebytes", sizeBytes);
           // problem is here maybe
           const objectURL = URL.createObjectURL(content);
           let sizeDisplay, sizeUnit;
@@ -210,6 +212,40 @@ function App() {
     });
 
   }
+
+  const goBack = (e) => {
+    e.preventDefault();
+    const url = new URL(urlInput);
+    const pathname = url.pathname;
+    const pathParts = pathname.split('/');
+    // if pathParts.length === 5, then it is a repository not remove 
+    if (pathParts.length === 5) {
+      alert('You are at the root of the repository!');
+      return;
+    }
+
+    const folderPath = pathParts.slice(0, -1).join('/');
+    // console.log(folderPath);
+    const folderUrl = `https://github.com${folderPath}`;
+    downRepo(folderUrl);
+  }
+
+  const downloadFile = async (e) => {
+    // console.log("clicked")
+    e.preventDefault();
+    const fileUrl = e.target.href;
+    // console.log("fileUrl", fileUrl);
+    const response = await fetch(fileUrl);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileUrl.split('/').pop();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  };
+
 
   const downloadImage = async () => {
     const imageUrl = `https://opengraph.githubassets.com/e61b97681f68c6b6893f9386c313d502fdfb7b512bdf4f187b2582bc0378b0c6/${owner}/${repo}`;
@@ -480,11 +516,27 @@ function App() {
 
 
               <div className='flex-1'>
-                {/* {console.log(data)} */}
+                {/* {console.log("checking data", data)} */}
+
+                {!warning && <p onClick={goBack} className="cursor-pointer  text-sm font-semibold my-5 inline-flex p-1 items-center justify-center gap-2 whitespace-nowrap rounded border border-sky-500 text-sky-500 px-6 outline-none bg-transparent active:text-sky-600 transition duration-200 active:scale-90"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                  <path fillRule="evenodd" d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z" clipRule="evenodd" />
+                </svg>
+
+                  {`Back`}</p>}
                 <p className="text-sky-900 text-xl font-semibold mb-5">Zipped {data?.length} Files</p>
                 <ul className="space-y-3">
+
                   {data?.map((item, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm text-sky-900 font-semibold"><CheckIcon />{item.name}</li>
+                    <li key={index} className="flex items-center gap-2 text-sm text-sky-900 font-semibold">
+                      {item.type === 'file' ? <div className='flex justify-center items-center'>
+                        <FileIcon />
+                        <a className='hover:text-sky-500' onClick={downloadFile} href={item.download_url}>
+                          {item.name}</a>
+                      </div> : <div className='flex justify-center items-center'>
+                      <FolderIcon />
+                        <a className='flex cursor-pointer hover:text-sky-500' onClick={() => downRepo(item._links.html)}> {item.name}</a>
+                      </div>
+                      }</li>
 
                   ))}
 
@@ -569,8 +621,8 @@ function App() {
                     }
                   </figure>
                   {/*  <!-- Body--> */}
-                  <div className="p-6 mt-5">
-                    <p>
+                  <div className="p-1 mt-5 ">
+                    <p className='overflow-scroll sm:overflow-auto'>
                       {`${owner}_${repo}_thumbnail.png`}
                     </p>
                   </div>
