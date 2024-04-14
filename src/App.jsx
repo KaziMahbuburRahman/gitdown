@@ -1,7 +1,6 @@
 import JSZip from 'jszip';
 import LoadingIcon from './icons/LoadingIcon';
 import { useState } from 'react';
-import CheckIcon from './icons/CheckIcon';
 import DownloadIcon from './icons/DownloadIcon';
 import ReactDOM from "react-dom"
 import AdsComponent from './components/AdsComponent';
@@ -198,7 +197,7 @@ function App() {
           // console.log(objectURL);
           // const a = document.createElement('a');
           // a.href = objectURL;
-          let downloadFileName = `${folder ? owner + "_" + repo + branch : owner + "_" + repo}.zip`;
+          let downloadFileName = `${folder ? owner + "_" + repo + "_" + folder : owner + "_" + repo}.zip`;
           // console.log("downloadFileName:", downloadFileName);
           setDownloadLink(objectURL);
           setDownloadFileName(downloadFileName);
