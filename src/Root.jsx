@@ -12,6 +12,7 @@ import App from './App.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import { NavbarComponent } from './NavbarComponent.jsx';
 import Footer from './Footer.jsx';
+import Privacy from './components/Privacy.jsx';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,15 @@ const router = createBrowserRouter([
             <>
                 <NavbarComponent />
                 <Contact />
+                <Footer />
+            </>
+    },
+    {
+        path: "/gitdown/privacy",
+        element:
+            <>
+                <NavbarComponent />
+                <Privacy />
                 <Footer />
             </>
     }
