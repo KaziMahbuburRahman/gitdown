@@ -50,6 +50,9 @@ const Footer = () => {
                   <li className="mb-2 leading-6">
                     <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/gitdown/contact">Contact Us</Link>
                   </li>
+                  <li className="mb-2 leading-6">
+                    <Link className="transition-colors duration-300 hover:text-gray-100 focus:text-gray-50" to="/gitdown/privacy">Privacy Policy</Link>
+                  </li>
 
                   <li className="mb-2 leading-6">
                     <a
