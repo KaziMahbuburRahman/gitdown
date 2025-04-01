@@ -98,8 +98,10 @@ const Footer = () => {
                   </div>
                 </div>
 
-      {/*<!-- Component: Large basic google app button  --> */}
-      <a
+                {/*<!-- Component: Large basic google app button  --> */}
+                <a className='px-5' href="https://www.buymeacoffee.com/MahbubDev" target="_blank">
+                  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{ height: "60px", width: "217px" }} /></a>
+                {/* <a
         href="https://play.google.com/store/apps/details?id=com.techhelpbd.gitdown"
         target='_blank'
         className="my-10 inline-flex h-16 min-w-44 items-center justify-start gap-2 whitespace-nowrap rounded bg-slate-900 px-3.5 text-base font-semibold tracking-wide text-slate-50 transition duration-300 hover:bg-slate-950 focus:bg-slate-950 focus-visible:outline-none"
@@ -123,13 +125,13 @@ const Footer = () => {
           <span className="text-xs font-normal">Get it on</span>
           <span>Google Play</span>
         </span>
-      </a>
-      {/*<!-- End Large basic google app button  --> */}
+      </a> */}
+                {/*<!-- End Large basic google app button  --> */}
 
 
 
-      {/*<!-- Component: Large outline google app button  --> */}
-      {/* <a
+                {/*<!-- Component: Large outline google app button  --> */}
+                {/* <a
         href="#"
         className="my-10 inline-flex h-16 min-w-44 bg-white items-center justify-start gap-2 whitespace-nowrap rounded border border-slate-900 px-3.5 text-base font-semibold tracking-wide text-slate-900 transition duration-300 hover:border-slate-950 focus:border-slate-950 focus-visible:outline-none"
       >
@@ -153,7 +155,7 @@ const Footer = () => {
           <span>Google Play</span>
         </span>
       </a> */}
-      {/*<!-- End Large outline google app button  --> */}
+                {/*<!-- End Large outline google app button  --> */}
 
               </nav>
             </div>
